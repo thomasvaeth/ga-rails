@@ -14,3 +14,40 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var BASE_CHARGE = 1.35,
+	BASE_CHARGE_P = 2.02,
+	MINIMUM = 4.00,
+	MINIMUM_P = 6.00,
+	COSTPERMILE = 1.35,
+	COSTPERMILE_P = 2.02,
+	COSTPERMINUTE = 0.24,
+	COSTPERMINUTE_P = 0.36,
+	TRUSTFEE = 1.95;
+
+
+var lyftCharge = function(miles,minutes){
+	var charge = BASE_CHARGE
+		   + (COSTPERMINUTE*minutes)
+	 	   + (COSTPERMILE*miles)
+	 	   + TRUSTFEE;
+	if(charge < 4.00){
+	 return 4.00
+	} else {
+	 return charge;
+	}
+}
+
+var lyftChargePlus = function(miles,minutes){
+	var charge = BASE_CHARGE_P
+		   + (COSTPERMINUTE_P*minutes)
+	 	   + (COSTPERMILE_P*miles)
+	 	   + TRUSTFEE;
+	if(charge < 4.00){
+	 return 4.00
+	} else {
+	 return charge;
+	}
+}
+
+
