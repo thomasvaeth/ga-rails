@@ -22,9 +22,25 @@ Home Page
 			success : function(data,textStatus,garbage){
 				$("#loc").val(data.regionName);
 				$("#slat").val(data.lat)
-				$("#slon").val(data.lon)			
+				$("#slon").val(data.lon)	
+				var latlng = String(data.lat) +","+ String(data.lon);
+				var data = {latlng}
+				console.log(latlng)		
+	$.ajax(
+		"/location",
+		{
+			method  : "GET",
+			data    : data,
+			success : function(data,textStatus,garbage){
+				$("#from").val(data.results[0].formatted_address);		
 			}
 		}
 	);
+
+			}
+		}
+	);
+
+	
 	});
 </script>
