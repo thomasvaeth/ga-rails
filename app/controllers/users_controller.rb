@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 	def show
+		unless @current_user
+			flash[:danger] = "You are not logged in."
+			redirect_to root_path
+		end
 	end
 
 	def new
