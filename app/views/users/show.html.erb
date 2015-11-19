@@ -15,3 +15,10 @@
   </div>
 <% end %>
 </div>
+<div>
+<% @current_user.address.each do |address| %>
+<div>
+<span class="removeAddress glyphicon glyphicon-remove-circle"></span><%= address.address %>
+</div>
+<% end %>
+</div>
