@@ -9,10 +9,12 @@ Home Page
 <%= submit_tag "Submit", id: "sub"%>
 <%end%>
 
+
+<!-- <div id="tooltip-container"></div> -->
+<!-- <div id="canvas-svg"></div> -->
+
 <script>
-
 	$(document).ready(function(){
-
 	$.ajax(
 		"http://ip-api.com/json",
 		{
@@ -25,6 +27,4 @@ Home Page
 		}
 	);
 	});
-
-
 </script>
