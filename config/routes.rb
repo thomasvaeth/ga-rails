@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'main#index'
   get '/' => 'main#index'
-  get '/results' => 'main#renderresults'
   post '/results' => 'main#results'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

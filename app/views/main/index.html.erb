@@ -1,6 +1,6 @@
 Home Page
 
-<%=form_tag results_path remote:true do %>
+<%=form_tag results_path :method => :get do %>
 <%= text_field_tag :from%>
 <%= text_field_tag :to%>
 <%= hidden_field_tag :loc%>
