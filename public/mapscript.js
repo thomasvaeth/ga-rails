@@ -146,6 +146,8 @@ function makeMap(us) {
           html += id_name_map[d.id];
           html += "</span>";
           html += "<span class=\"tooltip_value\">";
+          html += "Total Searches: " + (valueById.get(d.usernumber) ? valueById.get(d.id) : "") + "<br>" 
+          html += "Average Distance: <br>";
           html += "Average Fare: " + (valueById.get(d.id) ? valueById.get(d.id) : "");
           html += "";
           html += "</span>";
