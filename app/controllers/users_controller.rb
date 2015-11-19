@@ -23,7 +23,13 @@ class UsersController < ApplicationController
 	end
 
 	def newAddress
-		render plain: params[:address]
+		if @current_user
+			@current_user.address.create address: params[:address]
+			test = Geocoder.coordinates(params[:address]) 
+			render plain: 'success'
+		else
+			render plain: 'error'
+		end
 	end
 
 	private

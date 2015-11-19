@@ -10,15 +10,15 @@ autocomplete2 = new google.maps.places.Autocomplete(to, options);
 
 $("#saveFrom").click(function(){saveAddress("#fromAddress",$(this))})
 $("#saveTo").click(function(){saveAddress("#toAddress", $(this))})
+$(".removeAddress").click(function(){removeAddress($(this))})
 })
 
 function saveAddress(elementName, button){
 	var address = $(elementName).children(".address").first().html()
 	console.log(address)
 	$.ajax({url:"/users/newAddress", data:{address:address}}).done(function(data){
-		console.log(data)
-		//button.prop("disabled", true).html("Saved!")
+		button.prop("disabled", true).html("Saved!")
 	}).fail(function(message){
-		console.log(message.responseText)
+		button.prop("disabled", true).html("Error Saving!")
 	})
 }
