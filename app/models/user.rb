@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+	has_many :address
 
 	validates_presence_of :password, on: :create
 
