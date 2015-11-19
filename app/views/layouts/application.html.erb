@@ -10,7 +10,9 @@
   <script type="text/javascript" src="/googlesearch.js"></script>
 </head>
 <body>
-
+<% if @current_user %>
+<%= @current_user['email'] %>
+<% end %>
 <%= yield %>
 
 </body>
