@@ -8,13 +8,17 @@ autocomplete = new google.maps.places.Autocomplete(from, options);
 var to = document.getElementById('to')
 autocomplete2 = new google.maps.places.Autocomplete(to, options);
 
-$("#saveFrom").click(function(){saveAddress("#from",$(this))})
-$("#saveTo").click(function(){saveAddress("#to", $(this))})
+$("#saveFrom").click(function(){saveAddress("#fromAddress",$(this))})
+$("#saveTo").click(function(){saveAddress("#toAddress", $(this))})
 })
 
 function saveAddress(elementName, button){
-	var address = $(elementName).val()
-	$.ajax({url:"/users/newAddress", data:{address:address}}).done(function(){
-		button.prop("disabled", true).val("Saved!")
+	var address = $(elementName).children(".address").first().html()
+	console.log(address)
+	$.ajax({url:"/users/newAddress", data:{address:address}}).done(function(data){
+		console.log(data)
+		//button.prop("disabled", true).html("Saved!")
+	}).fail(function(message){
+		console.log(message.responseText)
 	})
 }

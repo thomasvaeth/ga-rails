@@ -1,14 +1,14 @@
 Results page
 
 <div id="fromAddress">
-	FROM <%=@ride_data[2]%>
+	FROM <span class="address"><%=@ride_data[2]%></span>
 	<% if @current_user %>
 	  <button id="saveFrom">Save to address</button>
 	<%end%>
 </div>
 
 <div id="toAddress">
-	TO <%=@ride_data[1]%>
+	TO <span class="address"><%=@ride_data[1]%></span>
 	<% if @current_user %>
 	  <button id="saveTo">Save from address</button>
 	<%end%>

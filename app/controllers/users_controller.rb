@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 	end
 
 	def newAddress
-		
+		render plain: params[:address]
 	end
 
 	private
