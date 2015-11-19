@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GaRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="mapstyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_OcPqd4-0Dsx7LK_3wHvVzvKcJRWSwjQ&libraries=places"></script>
-  <script type="text/javascript" src="/googlesearch.js"></script>
-  <script src="d3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.js"></script>
-  <script src="/mapscript.js"></script>
-</head>
-<body>
-<% if @current_user %>
-<%= @current_user['email'] %>
-<% end %>
-<%= yield %>
+  <head>
+    <title>GaRails</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
-</body>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="mapstyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_OcPqd4-0Dsx7LK_3wHvVzvKcJRWSwjQ&libraries=places"></script>
+    <script type="text/javascript" src="/googlesearch.js"></script>
+    <script src="d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.js"></script>
+    <script src="/mapscript.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">GA-Rails</a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if @current_user %>
+            <li><%= @current_user['email'] %></li>
+            <li><a href="/logout">Logout</a></li>
+          <% else %>
+            <li><a href="/users/new">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <%= yield %>
+
+  </body>
 </html>
