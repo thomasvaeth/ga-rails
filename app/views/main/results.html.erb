@@ -3,14 +3,15 @@ Results page
 <%=@ride_data[4]%>
 
 <div id="fromAddress">
-	FROM <span class="address"><%=@ride_data[2]%></span>
+	FROM <span class="address"><%=@ride_data[2]["results"][0]["formatted_address"]%></span>
 	<% if @current_user %>
 	  <button id="saveFrom">Save to address</button>
 	<%end%>
 </div>
 
 <div id="toAddress">
-	TO <span class="address"><%=@ride_data[1]%></span>
+	TO <span class="address"><%=@ride_data[1][
+		"results"][0]["formatted_address"]%></span>
 	<% if @current_user %>
 	  <button id="saveTo">Save from address</button>
 	<%end%>

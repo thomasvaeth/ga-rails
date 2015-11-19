@@ -30,6 +30,15 @@ class MainController < ApplicationController
 		slon = params_pass["slon"]
 		dlat = coords[0]
 		dlon = coords[1]
+		start = slat.to_s + "," + slon.to_s
+		stop = dlat.to_s + "," + dlon.to_s
+		urls =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+start+'&result_type=street_address&key='+ ENV["GSERVER"]
+		urld =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+stop+'&result_type=street_address&key='+ ENV["GSERVER"]
+		startresponse = open(urls).read
+		stopresponse = open(urld).read
+
+		add1 = JSON.parse(startresponse)
+		add2 = JSON.parse(stopresponse)
 
 		@state = params_pass["loc"]
 
@@ -39,7 +48,7 @@ class MainController < ApplicationController
 		
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
                          end_latitude: dlat, end_longitude: dlon)
-		@ride_data = [uber_lyft_data(data), params_pass["to"], params_pass["from"], @current_user, @state]
+		@ride_data = [uber_lyft_data(data), add1, add2, @current_user, @state]
 	end
 
 	private
