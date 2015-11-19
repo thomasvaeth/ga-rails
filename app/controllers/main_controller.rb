@@ -26,12 +26,14 @@ class MainController < ApplicationController
 
 	def results
 		coords = Geocoder.coordinates(params_pass["to"]) 
-		slat = params_pass["slat"]
-		slon = params_pass["slon"]
+		location = Geocoder.coordinates(params_pass["from"]);
 		dlat = coords[0]
 		dlon = coords[1]
-		start = slat.to_s + "," + slon.to_s
+		slat = location[0]
+		slon = location[1]
+		start = location[0].to_s + "," + location[1].to_s
 		stop = dlat.to_s + "," + dlon.to_s
+
 		urls =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+start+'&result_type=street_address&key='+ ENV["GSERVER"]
 		urld =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+stop+'&result_type=street_address&key='+ ENV["GSERVER"]
 		startresponse = open(urls).read
@@ -39,7 +41,7 @@ class MainController < ApplicationController
 
 		add1 = JSON.parse(startresponse)
 		add2 = JSON.parse(stopresponse)
-
+		
 		@state = params_pass["loc"]
 
 		client = Uber::Client.new do |config|

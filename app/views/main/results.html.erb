@@ -20,6 +20,7 @@ Results page
 <ul>
 <%length = (@ride_data[0].length-1)%>
 	<% for i in 0..length %>
+	<%if @ride_data[0][i] != nil%>
 		<li><%=@ride_data[0][i].duration%></li>
 		<li><%=@ride_data[0][i].estimate%> 
 		   <% if @ride_data[0][i].surge_multiplier != nil && @ride_data[0][i].surge_multiplier > 1%>
@@ -29,5 +30,6 @@ Results page
 		<li><%=@ride_data[0][i].distance%></li>
 		<li><%=@ride_data[0][i].display_name%></li>
 		<hr>
+	<%end%>
 	<%end%>
 </ul>
