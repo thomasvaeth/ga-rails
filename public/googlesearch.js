@@ -22,3 +22,12 @@ function saveAddress(elementName, button){
 		button.prop("disabled", true).html("Error Saving!")
 	})
 }
+
+function removeAddress(element){
+	var address = element.siblings().html()
+	$.ajax({url:"/users/deleteAddress", data:{address:address}}).done(function(data){
+		element.parent().remove()
+	}).fail(function(message){
+		console.log(message.responseText)
+	})	
+}
