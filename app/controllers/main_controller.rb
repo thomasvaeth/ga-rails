@@ -1,3 +1,4 @@
+require 'open-uri'
 
 class MainController < ApplicationController
 	@@BASE_CHARGE = 1.35
@@ -12,6 +13,15 @@ class MainController < ApplicationController
 
 
 	def index
+		# result = request.location
+		# render json: result
+	end
+
+	def location
+		latlng = params["latlng"]
+		url =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latlng+'&result_type=street_address&key='+ ENV["GSERVER"]
+		response = open(url).read
+	    render json: response
 	end
 
 	def results
@@ -21,7 +31,7 @@ class MainController < ApplicationController
 		dlat = coords[0]
 		dlon = coords[1]
 
-		state = params_pass["loc"]
+		@state = params_pass["loc"]
 
 		client = Uber::Client.new do |config|
   		config.server_token  = ENV["TOKEN"]
@@ -29,7 +39,7 @@ class MainController < ApplicationController
 		
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
                          end_latitude: dlat, end_longitude: dlon)
-		@ride_data = [uber_lyft_data(data), params_pass["to"], params_pass["from"], @current_user]
+		@ride_data = [uber_lyft_data(data), params_pass["to"], params_pass["from"], @current_user, @state]
 	end
 
 	private
