@@ -32,6 +32,16 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def deleteAddress
+		if @current_user
+			@address = @current_user.address.find_by address: params[:address]
+			@address.delete
+			render plain: 'success'
+		else
+			render plain: 'error'
+		end
+	end
+
 	private
 
 	def user_params
