@@ -29,7 +29,7 @@ class MainController < ApplicationController
 		
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
                          end_latitude: dlat, end_longitude: dlon)
-		@ride_data = uber_lyft_data(data)
+		@ride_data = [uber_lyft_data(data), params_pass["to"], params_pass["from"], @current_user]
 	end
 
 	private
@@ -39,11 +39,12 @@ class MainController < ApplicationController
 	end
 
 	class Lyft 
-		def initialize duration,estimate,distance,display_name
+		def initialize duration,estimate,distance,display_name,surge
 			@duration = duration
 			@estimate = estimate
 			@distance = distance
 			@display_name = display_name
+			@surge_multiplier = surge
 		end
 
 		def duration 
@@ -61,14 +62,18 @@ class MainController < ApplicationController
 		def display_name 
 			@display_name
 		end
+
+		def surge_multiplier
+			@surge
+		end
 	end
 
 	def uber_lyft_data uber_data
 		lyft_est =  lyft_charge(uber_data[0]["distance"],uber_data[0]["duration"]).floor
 		lyft_p_est = lyft_charge_p(uber_data[0]["distance"],uber_data[0]["duration"]).floor
 
-		lyft = Lyft.new(uber_data[0][:duration],"$"+lyft_est.to_s+ "-" +(lyft_est+2).to_s,uber_data[0][:distance],"Lyft")
-		lyft_p = Lyft.new(uber_data[0][:duration],"$"+lyft_p_est.to_s+ "-" +(lyft_p_est+3).to_s,uber_data[0][:distance],"Lyft Plus")
+		lyft = Lyft.new(uber_data[0][:duration],"$"+lyft_est.to_s+ "-" +(lyft_est+2).to_s,uber_data[0][:distance],"Lyft","To be Determined")
+		lyft_p = Lyft.new(uber_data[0][:duration],"$"+lyft_p_est.to_s+ "-" +(lyft_p_est+3).to_s,uber_data[0][:distance],"Lyft Plus","To be Determined")
 		
 		uber = []
 

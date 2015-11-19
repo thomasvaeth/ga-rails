@@ -1,10 +1,30 @@
 Results page
-<ul>
-<%@ride_data.each do |data| %>
-<li><%=data.duration%></li>
-<li><%=data.estimate%></li>
-<li><%=data.distance%></li>
-<li><%=data.display_name%></li>
-<%end %>
-</ul>
 
+<div id="fromAddress">
+	FROM <%=@ride_data[2]%>
+	<% if @current_user %>
+	  <button id="saveFrom">Save to address</button>
+	<%end%>
+</div>
+
+<div id="toAddress">
+	TO <%=@ride_data[1]%>
+	<% if @current_user %>
+	  <button id="saveTo">Save from address</button>
+	<%end%>
+</div>
+
+<ul>
+<%length = (@ride_data[0].length-1)%>
+	<% for i in 0..length %>
+		<li><%=@ride_data[0][i].duration%></li>
+		<li><%=@ride_data[0][i].estimate%> 
+		   <% if @ride_data[0][i].surge_multiplier != nil && @ride_data[0][i].surge_multiplier > 1%>
+		    SURGE
+	       <%end%> 
+		</li>
+		<li><%=@ride_data[0][i].distance%></li>
+		<li><%=@ride_data[0][i].display_name%></li>
+		<hr>
+	<%end%>
+</ul>
