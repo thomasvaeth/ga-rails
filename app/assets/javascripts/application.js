@@ -31,8 +31,8 @@ var lyftCharge = function(miles,minutes){
 		   + (COSTPERMINUTE*minutes)
 	 	   + (COSTPERMILE*miles)
 	 	   + TRUSTFEE;
-	if(charge < 4.00){
-	 return 4.00
+	if(charge < MINIMUM){
+	 return MINIMUM
 	} else {
 	 return charge;
 	}
@@ -43,8 +43,8 @@ var lyftChargePlus = function(miles,minutes){
 		   + (COSTPERMINUTE_P*minutes)
 	 	   + (COSTPERMILE_P*miles)
 	 	   + TRUSTFEE;
-	if(charge < 4.00){
-	 return 4.00
+	if(charge < MINIMUM_P){
+	 return MINIMUM_P
 	} else {
 	 return charge;
 	}
