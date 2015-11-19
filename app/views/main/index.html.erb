@@ -1,1 +1,26 @@
 Home Page
+
+<%=form_tag results_path remote:true do %>
+<%= text_field_tag :from%>
+<%= text_field_tag :to%>
+<%= hidden_field_tag :loc%>
+<%= submit_tag "Submit", id: "sub"%>
+<%end%>
+
+<script>
+
+	$(document).ready(function(){
+
+	$.ajax(
+		"http://ip-api.com/json",
+		{
+			method  : "GET",
+			success : function(data,textStatus,garbage){
+				$("#loc").val(data.regionName);
+			}
+		}
+	);
+	});
+
+
+</script>
