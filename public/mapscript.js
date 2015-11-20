@@ -74,16 +74,19 @@ function hexToRgb(hex) {
 // var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
 
 var MAP_CATEGORY = "state";
-var MAP_VALUE = "usernumber";
+var MAP_VALUE = "count";
 var MAP_UBERFARE = "uberfare";
 var MAP_LYFTFARE = "lyftfare";
-var MAP_COUNT = "count"
 var MAP_MILESTOTAL = "milestotal";
 
 var width = WIDTH,
     height = HEIGHT;
 
 var valueById = d3.map();
+var uberFareById = d3.map();
+var lyftFareById = d3.map();
+var milesTotalById = d3.map();
+var countById = d3.map();
 
 // var startColors = COLOR_START.getColors(),
 //     endColors = COLOR_END.getColors();
@@ -91,9 +94,9 @@ var valueById = d3.map();
 var colors = [];
 
 for (var i = 0; i < COLOR_COUNTS; i++) {
-  var r = Interpolate(0, 15, COLOR_COUNTS, i);
-  var g = Interpolate(0, 100, COLOR_COUNTS, i);
-  var b = Interpolate(0, 80, COLOR_COUNTS, i);
+  var r = Interpolate(255, 229, COLOR_COUNTS, i);
+  var g = Interpolate(174, 48, COLOR_COUNTS, i);
+  var b = Interpolate(174, 48, COLOR_COUNTS, i);
   colors.push(new Color(r, g, b));
 }
 
@@ -112,14 +115,19 @@ d3.tsv("https://s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv", 
 name_id_map = {};
 id_name_map = {};
 
+
 for (var i = 0; i < names.length; i++) {
   name_id_map[names[i].name] = names[i].id;
   id_name_map[names[i].id] = names[i].name;
+
 }
 
 data.forEach(function(d) {
   var id = name_id_map[d[MAP_CATEGORY]];
-  valueById.set(id, +d[MAP_VALUE]); 
+  uberFareById.set(id, +d[MAP_UBERFARE]);
+  lyftFareById.set(id, +d[MAP_LYFTFARE]);
+  milesTotalById.set(id, +d[MAP_MILESTOTAL]);
+  countById.set(id, +d[MAP_VALUE]);
 });
 
 quantize.domain([d3.min(data, function(d){ return +d[MAP_VALUE] }),
@@ -134,13 +142,14 @@ function makeMap(us) {
     .enter().append("path")
       .attr("transform", "scale(" + SCALE + ")")
       .style("fill", function(d) {
-        if (valueById.get(d.id)) {
-          var i = quantize(valueById.get(d.id));
+        if (countById.get(d.id)) {
+          var i = quantize(countById.get(d.id));
           var color = colors[i].getColors();
           return "rgb(" + color.r + "," + color.g +
               "," + color.b + ")";
-        } else {
-          return "";
+        } else if(countById.get(d.id) == 0){
+          return "rgb(" + 255 + "," + 190 +
+              "," + 190 + ")";
         }
       })
       .attr("d", path)
@@ -152,9 +161,11 @@ function makeMap(us) {
           html += id_name_map[d.id];
           html += "</span>";
           html += "<span class=\"tooltip_value\">";
-          html += "Total Searches: " + (valueById.get(d.usernumber) ? valueById.get(d.id) : "") + "<br>" 
-          html += "Average Distance: <br>";
-          html += "Average Fare: " + (valueById.get(d.id) ? valueById.get(d.id) : "");
+          html += "Total Searches: " + (countById.get(d.id) ? countById.get(d.id) : "") + "<br>" ;
+          html += "Total Distance: " + (milesTotalById.get(d.id) ? milesTotalById.get(d.id) : "") + "<br>";
+          html += "Average Distance: " + (milesTotalById.get(d.id) ? (milesTotalById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
+          html += "Average Uber Fare: " + (uberFareById.get(d.id) ? (uberFareById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
+          html += "Average Lyft Fare: " + (lyftFareById.get(d.id) ? (lyftFareById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
           html += "";
           html += "</span>";
           html += "</div>";
@@ -169,12 +180,12 @@ function makeMap(us) {
           
           if (d3.event.layerX < map_width / 2) {
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 15) + "px")
+              .style("top", (d3.event.layerY + 600) + "px")
               .style("left", (d3.event.layerX + 15) + "px");
           } else {
             var tooltip_width = $("#tooltip-container").width();
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 15) + "px")
+              .style("top", (d3.event.layerY + 600) + "px")
               .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
           }
       })

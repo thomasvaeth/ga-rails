@@ -68,7 +68,7 @@ $(document).ready(function(){
 		var lyftPrice_p = originalLyftprice_p.replace("$", "").split("-");
 
 		if(val >= 1.0){
-			val -= 0.25;
+			val == 1.0 ? val = 1 : val -= 0.25;
 			$("#surge").val(val);
 
 			lyftPrice[0] =  "$"+Math.floor((parseFloat(lyftPrice[0]) * val)).toString()
