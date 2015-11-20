@@ -17,6 +17,11 @@ class MainController < ApplicationController
 		gon.mapData = @map_data
 	end
 
+	def update
+		@map_data = State.select("id,state,uberfare,lyftfare,count,milestotal").order("id ASC")
+		gon.mapData = @map_data
+	end
+
 	def location
 		latlng = params["latlng"]
 		unless latlng.present?

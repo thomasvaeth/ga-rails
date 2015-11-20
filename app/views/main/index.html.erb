@@ -17,17 +17,33 @@
 	<div class="section section-2">
 		<div id="tooltip-container"></div>
 		<div id="canvas-svg"></div>
+		<button id="1">Uber</button>
+		<button id="2">Lyft</button>
+		<button id="3">Count</button>
 	</div>
 	<div class="section section-3">
 		About
 	</div>
 </div>
 
+
+
 <link rel="stylesheet" type="text/css" href="mapstyle.css">
 <script src="/mapscript.js"></script>
 
 <script>
 	$(document).ready(function(){
+	renderMap('byCount');
+	$("#1").click(function(){
+		renderMap('byUber');
+	});
+	$("#2").click(function(){
+		renderMap('byLyft');
+	});
+	$("#3").click(function(){
+		renderMap('byCount')
+	});
+
 	$.ajax(
 		"http://ip-api.com/json",
 		{
@@ -54,7 +70,5 @@
 			}
 		}
 	);
-
-	
 	});
 </script>

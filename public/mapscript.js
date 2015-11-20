@@ -11,22 +11,16 @@
     Do NOT overwrite this variable 
 3. To define customizable properties, use capitalized variable names,
     and define them in Properties tab ---*/
-    var data = {};
-
-// $.getJSON("data_user.json", function(json){
-//     data = json;
-// var data = require("testdata.json");
-// console.log(data)
+var data = {};
 data = gon.mapData;
 
 console.log(gon.mapData);
 
-
-var WIDTH = 800, HEIGHT = 400;
+var WIDTH = 900, HEIGHT = 560;
 
 var COLOR_COUNTS = 9;
 
-var SCALE = 0.7;
+var SCALE = 1;
 
 
 function Interpolate(start, end, steps, count) {
@@ -64,14 +58,6 @@ function hexToRgb(hex) {
     } : null;
 }
 
-// var COLOR_FIRST = config.color1, COLOR_LAST = config.color2;
-
-// var rgb = hexToRgb(COLOR_FIRST);
-// 
-// var COLOR_START = new Color(rgb.r, rgb.g, rgb.b);
-
-// rgb = hexToRgb(COLOR_LAST);
-// var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
 
 var MAP_CATEGORY = "state";
 var MAP_VALUE = "count";
@@ -87,9 +73,6 @@ var uberFareById = d3.map();
 var lyftFareById = d3.map();
 var milesTotalById = d3.map();
 var countById = d3.map();
-
-// var startColors = COLOR_START.getColors(),
-//     endColors = COLOR_END.getColors();
 
 var colors = [];
 
@@ -109,6 +92,9 @@ var path = d3.geo.path();
 var svg = d3.select("#canvas-svg").append("svg")
     .attr("width", width)
     .attr("height", height);
+
+
+var renderMap = function(filter){
 
 d3.tsv("https://s3-us-west-2.amazonaws.com/vida-public/geo/us-state-names.tsv", function(error, names) {
 
@@ -134,7 +120,20 @@ quantize.domain([d3.min(data, function(d){ return +d[MAP_VALUE] }),
   d3.max(data, function(d){ return +d[MAP_VALUE] })]);
 
 
-function makeMap(us) {
+function makeMap(us,choice) {
+
+  switch(choice){
+    case 'byCount' : filter = countById;
+      break;
+    case 'byDistance' : filter = milesTotalById;
+      break;
+    case 'byUber' : filter = uberFareById;
+      break;
+    case 'byLyft' : filter = lyftFareById;
+      break;
+    default : filter = countById;
+  }
+
   svg.append("g")
       .attr("class", "categories-choropleth")
     .selectAll("path")
@@ -142,12 +141,12 @@ function makeMap(us) {
     .enter().append("path")
       .attr("transform", "scale(" + SCALE + ")")
       .style("fill", function(d) {
-        if (countById.get(d.id)) {
-          var i = quantize(countById.get(d.id));
+        if (filter.get(d.id)) {
+          var i = quantize(filter.get(d.id));
           var color = colors[i].getColors();
           return "rgb(" + color.r + "," + color.g +
               "," + color.b + ")";
-        } else if(countById.get(d.id) == 0){
+        } else if(filter.get(d.id) == 0){
           return "rgb(" + 255 + "," + 190 +
               "," + 190 + ")";
         }
@@ -159,13 +158,12 @@ function makeMap(us) {
           html += "<div class=\"tooltip_kv\">";
           html += "<span class=\"tooltip_key\">";
           html += id_name_map[d.id];
-          html += "</span>";
+          html += "<br></span>";
           html += "<span class=\"tooltip_value\">";
-          html += "Total Searches: " + (countById.get(d.id) ? countById.get(d.id) : "") + "<br>" ;
-          html += "Total Distance: " + (milesTotalById.get(d.id) ? milesTotalById.get(d.id) : "") + "<br>";
-          html += "Average Distance: " + (milesTotalById.get(d.id) ? (milesTotalById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
-          html += "Average Uber Fare: " + (uberFareById.get(d.id) ? (uberFareById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
-          html += "Average Lyft Fare: " + (lyftFareById.get(d.id) ? (lyftFareById.get(d.id) / countById.get(d.id)).toFixed(2) : "") + "<br>";
+          html += "Total Searches: " + (countById.get(d.id) ? countById.get(d.id) + "<br>" : "0 <br>" );
+          html += (milesTotalById.get(d.id) ? "Average Distance: " + (milesTotalById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
+          html += (uberFareById.get(d.id) ? "Average Uber Fare: " + (uberFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
+          html += (lyftFareById.get(d.id) ? "Average Lyft Fare: " + (lyftFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
           html += "";
           html += "</span>";
           html += "</div>";
@@ -202,7 +200,7 @@ function makeMap(us) {
 }
 
 d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json", function(error, us) {
-  makeMap(us);
+  makeMap(us, filter);
 });
-
 });
+};
