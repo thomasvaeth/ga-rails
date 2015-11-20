@@ -36,8 +36,36 @@ Results page
 <button id="minus">-</button>
 <input id="surge" type="number" min="1" max="20" step=".25" value="1"></input>
 <button id="plus">+</button>
-
+<div id="map"></div>
 <script>
+var from, to, directionsDisplay, directionsService
+function initMap(){
+  directionsService = new google.maps.DirectionsService();
+  from = new google.maps.LatLng(<%=@location["dlat"]%>, <%=@location["dlon"]%>);
+  to = new google.maps.LatLng(<%=@location["slat"]%>, <%=@location["slon"]%>);
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:18,
+    center: from
+  }
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  directionsDisplay.setMap(map);
+  calcRoute()
+}
+
+function calcRoute() {
+  var request = {
+    origin:from,
+    destination:to,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+}
+
 $(document).ready(function(){
 	var originalLyftprice = $("#Lyft").html();
 	var originalLyftprice_p = $("#LyftPlus").html();
