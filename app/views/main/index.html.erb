@@ -32,7 +32,8 @@ Home Page
 			method  : "GET",
 			data    : data,
 			success : function(data,textStatus,garbage){
-				$("#from").val(data.results[0].formatted_address);		
+				$("#from").val(data.results[0].formatted_address);	
+				$("#from").data('default', data.results[0].formatted_address)	
 			}
 		}
 	);
