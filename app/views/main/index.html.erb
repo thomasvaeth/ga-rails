@@ -1,17 +1,26 @@
-Home Page
+<div id="fullpage">
+	<div class="section section-1">
+		<h1 id="title">Home Page</h1>
 
-<%=form_tag results_path :method => :get do %>
-<%= text_field_tag :from%>
-<%= text_field_tag :to%>
-<%= hidden_field_tag :loc%>
-<%= hidden_field_tag :slat%>
-<%= hidden_field_tag :slon%>
-<%= submit_tag "Submit", id: "sub"%>
-<%end%>
+		<%= form_tag results_path :method => :get do %>
+			<%= text_field_tag :from%>
+			<%= text_field_tag :to%>
 
-
-<!-- <div id="tooltip-container"></div> -->
-<!-- <div id="canvas-svg"></div> -->
+			<%= hidden_field_tag :loc%>
+			<%= hidden_field_tag :slat%>
+			<%= hidden_field_tag :slon%>
+			
+			<%= submit_tag "Submit", id: "sub"%>
+		<%end%>
+	</div>
+	<div class="section section-2">
+		<!-- <div id="tooltip-container"></div> -->
+		<!-- <div id="canvas-svg"></div> -->
+	</div>
+	<div class="section section-3">
+		About
+	</div>
+</div>
 
 <script>
 	$(document).ready(function(){

@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: 'Arkhip'; 
+  src: url('Arkhip.ttf');
+}
+
+#title {
+  font-family: 'Arkhip' !important;
+}
+
 /* stylesheet for your custom graph */
 
 .categories {
