@@ -161,9 +161,9 @@ function makeMap(us,choice) {
           html += "<br></span>";
           html += "<span class=\"tooltip_value\">";
           html += "Total Searches: " + (countById.get(d.id) ? countById.get(d.id) + "<br>" : "0 <br>" );
-          html += (milesTotalById.get(d.id) ? "Average Distance: " + (milesTotalById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
-          html += (uberFareById.get(d.id) ? "Average Uber Fare: " + (uberFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
-          html += (lyftFareById.get(d.id) ? "Average Lyft Fare: " + (lyftFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
+          html += (milesTotalById.get(d.id) ? "Average Distance: " + (milesTotalById.get(d.id) / countById.get(d.id)).toFixed(2) + " mi<br>" : "");
+          html += (uberFareById.get(d.id) ? "Average Uber Fare: $" + (uberFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
+          html += (lyftFareById.get(d.id) ? "Average Lyft Fare: $" + (lyftFareById.get(d.id) / countById.get(d.id)).toFixed(2) + "<br>" : "");
           html += "";
           html += "</span>";
           html += "</div>";

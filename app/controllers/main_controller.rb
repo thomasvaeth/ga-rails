@@ -13,6 +13,7 @@ class MainController < ApplicationController
 
 
 	def index
+
 		@map_data = State.select("id,state,uberfare,lyftfare,count,milestotal").order("id ASC")
 		gon.mapData = @map_data
 	end
@@ -50,6 +51,7 @@ class MainController < ApplicationController
 			redirect_to root_path and return
 		end
 
+
 		dlat = coords[0]
 		dlon = coords[1]
 		slat = location[0]
@@ -65,6 +67,11 @@ class MainController < ApplicationController
 		add1 = JSON.parse(startresponse)
 		add2 = JSON.parse(stopresponse)
 		
+		dropoff = add1["results"][0]["formatted_address"]
+		pickup = add2["results"][0]["formatted_address"]
+
+		@uberString="uber://?client_id="+ENV["CLIENT"]+"&action=setPickup&pickup[latitude]="+dlat.to_s+"&pickup[longitude]="+dlon.to_s+"&pickup[nickname]=You%20Are%20Here&pickup[formatted_address]="+pickup.to_s+"&dropoff[latitude]="+slat.to_s+"&dropoff[longitude]="+slon.to_s+"&dropoff[nickname]=Your%20Destination&dropoff[formatted_address]="+dropoff.to_s+"&product_id=a1111c8c-c720-46c3-8534-2fcdd730040d"
+
 		@state = params_pass["loc"]
 
 		client = Uber::Client.new do |config|
