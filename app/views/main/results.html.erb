@@ -37,6 +37,17 @@ Results page
 <input id="surge" type="number" min="1" max="20" step=".25" value="1"></input>
 <button id="plus">+</button>
 
+
+<button id="clickable1" class="android apple" hidden><a href="<%=@uberString%>">UBER</a></button>
+<button class="android" hidden><a href="https://play.google.com/store/apps/details?id=com.ubercab&hl=en">UBER ANDROID
+</a></button>
+<button class="apple" hidden><a  href="https://itunes.apple.com/us/app/uber/id368677368">UBER APPLE</a></button>
+<button id="clickable2" class="android apple" hidden><a href="lyft://app">LYFT</a></button>
+<button class="android" hidden><a href="https://play.google.com/store/apps/details?id=me.lyft.android&hl=en">LYFT ANDROID
+</a></button>
+<button class="apple" hidden><a  href="https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082?mt=8">LYFT APPLE
+</a></button>
+
 <script>
 $(document).ready(function(){
 	var originalLyftprice = $("#Lyft").html();
@@ -83,6 +94,45 @@ $(document).ready(function(){
 		} else {}
 		
 	});
+//false = apple
+//true  = android
+var phone = null;
+
+if(navigator.userAgent.match(/iPhone/i)){
+ 	$(".apple").show();
+ 	phone = false;
+}
+
+if(navigator.userAgent.match(/Android/i)){
+ 	$(".android").show();
+ 	phone = true;
+}
+
+var clicks1 = 1;
+$("#clickable1").click(function(){
+	clicks1+=1;
+	if(clicks1 > 2)
+	{ 
+	 if(phone){
+	   window.open("https://play.google.com/store/apps/details?id=com.ubercab&hl=en");
+	 } else {
+	   window.open("https://itunes.apple.com/us/app/uber/id368677368");
+	 }
+	}
+});
+var clicks2 = 1;
+$("#clickable2").click(function(){
+	clicks2+=1;
+	if(clicks2 > 2)
+	{ 
+	 if(phone){
+	   window.open("https://play.google.com/store/apps/details?id=me.lyft.android&hl=en");
+	 } else {
+	   window.open("https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082?mt=8");
+	 }
+	}
+});
+
 });
 
 
