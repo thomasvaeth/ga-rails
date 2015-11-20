@@ -78,6 +78,7 @@ class MainController < ApplicationController
 
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
                           end_latitude: dlat, end_longitude: dlon)
+		@location = {"slat"=>slat,"slon"=>slon,"dlat"=>dlat,"dlon"=>dlon}
 		@ride_data = [uber_lyft_data(data), add1, add2, @current_user, @state]
 		uber_estimate = @ride_data[0][0].estimate.dup
 		lyft_estimate = @ride_data[0][3].estimate.dup
