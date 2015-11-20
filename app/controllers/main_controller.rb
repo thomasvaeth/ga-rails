@@ -13,8 +13,8 @@ class MainController < ApplicationController
 
 
 	def index
-		# result = request.location
-		# render json: result
+		@map_data = State.select("id,state,uberfare,lyftfare,count,milestotal").order("id ASC")
+		gon.mapData = @map_data
 	end
 
 	def location
@@ -61,12 +61,11 @@ class MainController < ApplicationController
 		lyft_estimate = (lyft_estimate[0].to_i+lyft_estimate[1].to_i)/2.0
 		distance = @ride_data[0][3].distance
 		this_state = State.find_by state: @state
+		puts this_state.uberfare
 		this_state.update_columns(uberfare: this_state.uberfare+uber_estimate)
 		this_state.update_columns(lyftfare: this_state.lyftfare+lyft_estimate)
 		this_state.update_columns(count: this_state.count+1)
 		this_state.update_columns(milestotal: this_state.milestotal+distance)
-		puts uber_estimate
-		puts lyft_estimate
 	end
 
 	private
