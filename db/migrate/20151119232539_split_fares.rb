@@ -4,6 +4,8 @@ class SplitFares < ActiveRecord::Migration
   	add_column :states, :lyftfare, :float
   	remove_column :states, :count, :string
   	add_column :states, :count, :integer
+	remove_column :states, :milestotal, :string
+  	add_column :states, :milestotal, :float
   	remove_column :states, :faretotal, :string
   	remove_column :addresses, :city, :string
   	remove_column :addresses, :state, :string

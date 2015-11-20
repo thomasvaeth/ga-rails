@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20151119232539) do
 
   create_table "states", force: :cascade do |t|
     t.string   "state"
-    t.string   "milestotal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float    "uberfare"
     t.float    "lyftfare"
     t.integer  "count"
+    t.float    "milestotal"
   end
 
   create_table "users", force: :cascade do |t|
