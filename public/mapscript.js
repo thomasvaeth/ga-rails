@@ -195,4 +195,3 @@ d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json", function(e
 });
 
 });
-});
