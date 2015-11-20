@@ -59,10 +59,12 @@ class MainController < ApplicationController
 		lyft_estimate = lyft_estimate.split("-")
 		uber_estimate = (uber_estimate[0].to_i+uber_estimate[1].to_i)/2.0
 		lyft_estimate = (lyft_estimate[0].to_i+lyft_estimate[1].to_i)/2.0
+		distance = @ride_data[0][3].distance
 		this_state = State.find_by state: @state
 		this_state.update_columns(uberfare: this_state.uberfare+uber_estimate)
 		this_state.update_columns(lyftfare: this_state.lyftfare+lyft_estimate)
 		this_state.update_columns(count: this_state.count+1)
+		this_state.update_columns(milestotal: this_state.milestotal+distance)
 		puts uber_estimate
 		puts lyft_estimate
 	end
