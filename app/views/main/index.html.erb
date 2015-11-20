@@ -13,6 +13,8 @@
 			<%= submit_tag "Submit", id: "sub"%>
 		<%end%>
 	</div>
+
+	<span id="mapData"><%=@map_data%></span>
 	<div class="section section-2">
 		<!-- <div id="tooltip-container"></div> -->
 		<!-- <div id="canvas-svg"></div> -->
@@ -21,6 +23,9 @@
 		About
 	</div>
 </div>
+
+<link rel="stylesheet" type="text/css" href="mapstyle.css">
+<script src="/mapscript.js"></script>
 
 <script>
 	$(document).ready(function(){
