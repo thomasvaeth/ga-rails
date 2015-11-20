@@ -1,23 +1,19 @@
-<%= form_for @user do |user| %>
+<%= bootstrap_form_for @user do |user| %>
   <div>
-  <%= user.label :firstname %>
-  <%= user.text_field :firstname %>
+    <%= user.text_field :firstname, :label => 'Name', :placeholder => 'First', wrapper: { class: 'col-xs-6 col-sm-6 col-md-6 col-lg-6'} %>
   </div>
   <div>
-  <%= user.label :lastname %>
-  <%= user.text_field :lastname %>
+    <%= user.text_field :lastname, :label => ' ', :placeholder => 'Last', wrapper: { class: 'col-xs-6 col-sm-6 col-md-6 col-lg-6'} %>
   </div>
   <div>
-  <%= user.label :email %>
-  <%= user.text_field :email %>
+    <%= user.text_field :email, :label => 'Email address', :placeholder => 'Email', wrapper: { class: 'col-xs-12 col-sm-12 col-md-12 col-lg-12'} %>
   </div>  
   <div>
-  <%= user.label :password %>
-  <%= user.password_field :password %>
+    <%= user.password_field :password, :label => 'Create a password', :placeholder => 'Password (8 character minimum)', wrapper: { class: 'col-xs-12 col-sm-12 col-md-12 col-lg-12'} %>
   </div>
   <div>
-  <%= user.label :password_confirmation %>
-  <%= user.password_field :password_confirmation %>
+    <%= user.password_field :password_confirmation, :hide_label => true, :placeholder => 'Confirm Password', wrapper: { class: 'col-xs-12 col-sm-12 col-md-12 col-lg-12'} %>
   </div>
-  <%= user.submit %>
+
+  <%= user.submit 'Sign up' %>
 <% end %>
