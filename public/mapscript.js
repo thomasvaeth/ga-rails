@@ -12,12 +12,14 @@
 3. To define customizable properties, use capitalized variable names,
     and define them in Properties tab ---*/
     var data = {};
-$.getJSON("data_user.json", function(json){
-    data = json;
+
+// $.getJSON("data_user.json", function(json){
+//     data = json;
 // var data = require("testdata.json");
 // console.log(data)
+data = gon.mapData;
 
-console.log(data);
+console.log(gon.mapData);
 
 
 var WIDTH = 800, HEIGHT = 400;
@@ -71,8 +73,12 @@ function hexToRgb(hex) {
 // rgb = hexToRgb(COLOR_LAST);
 // var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
 
-var MAP_CATEGORY = "state_and_district_of_columbia";
+var MAP_CATEGORY = "state";
 var MAP_VALUE = "usernumber";
+var MAP_UBERFARE = "uberfare";
+var MAP_LYFTFARE = "lyftfare";
+var MAP_COUNT = "count"
+var MAP_MILESTOTAL = "milestotal";
 
 var width = WIDTH,
     height = HEIGHT;
@@ -186,7 +192,6 @@ function makeMap(us) {
 
 d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/us.json", function(error, us) {
   makeMap(us);
-  makeBars(data);
 });
 
 });

@@ -29,6 +29,8 @@ gem 'bootstrap_form'
 
 gem 'uber-ruby', require: 'uber'
 
+gem 'gon'
+
 gem 'geocoder'
 
 # Use Unicorn as the app server
