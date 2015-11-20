@@ -22,7 +22,7 @@ Results page
 	<% for i in 0..length %>
 	<%if @ride_data[0][i] != nil%>
 		<li><%=@ride_data[0][i].duration%></li>
-		<li><%=@ride_data[0][i].estimate%> 
+		<li id="<%=@ride_data[0][i].display_name.tr(" ", "")%>"><%=@ride_data[0][i].estimate%> 
 		   <% if @ride_data[0][i].surge_multiplier != nil && @ride_data[0][i].surge_multiplier > 1%>
 		    SURGE <%=@ride.data[0][i].surge_multiplier%>
 	       <%end%> 
@@ -33,3 +33,58 @@ Results page
 	<%end%>
 	<%end%>
 </ul>
+
+<button id="minus">-</button>
+<input id="surge" type="number" min="1" max="20" step=".25" value="1"></input>
+<button id="plus">+</button>
+
+<script>
+$(document).ready(function(){
+	var originalLyftprice = $("#Lyft").html();
+	var originalLyftprice_p = $("#LyftPlus").html();
+
+	$("#plus").click(function(){
+		var val = parseFloat($("#surge").val());
+		var lyftPrice = originalLyftprice.replace("$", "").split("-");
+		var lyftPrice_p = originalLyftprice_p.replace("$", "").split("-");
+
+		if(val <= 20.0){
+			val += 0.25;
+			$("#surge").val(val);
+
+			lyftPrice[0] =  "$"+Math.floor((parseFloat(lyftPrice[0]) * val)).toString()
+			lyftPrice[1] =   "-"+Math.floor((parseFloat(lyftPrice[1]) * val)).toString()
+			lyftPrice_p[0] =  "$"+Math.floor((parseFloat(lyftPrice_p[0]) * val)).toString()
+			lyftPrice_p[1] =   "-"+Math.floor((parseFloat(lyftPrice_p[1]) * val)).toString()
+			lyftPrice = lyftPrice.join().replace(",","")
+			lyftPrice_p = lyftPrice_p.join().replace(",","")
+			$("#Lyft").html(lyftPrice)
+			$("#LyftPlus").html(lyftPrice_p)
+		} else {}
+	});
+
+	$("#minus").click(function(){
+		var val = parseFloat($("#surge").val());
+		var lyftPrice = originalLyftprice.replace("$", "").split("-");
+		var lyftPrice_p = originalLyftprice_p.replace("$", "").split("-");
+
+		if(val >= 1.0){
+			val -= 0.25;
+			$("#surge").val(val);
+
+			lyftPrice[0] =  "$"+Math.floor((parseFloat(lyftPrice[0]) * val)).toString()
+			lyftPrice[1] =   "-"+Math.floor((parseFloat(lyftPrice[1]) * val)).toString()
+			lyftPrice_p[0] =  "$"+Math.floor((parseFloat(lyftPrice_p[0]) * val)).toString()
+			lyftPrice_p[1] =   "-"+Math.floor((parseFloat(lyftPrice_p[1]) * val)).toString()
+			lyftPrice = lyftPrice.join().replace(",","")
+			lyftPrice_p = lyftPrice_p.join().replace(",","")
+			$("#Lyft").html(lyftPrice)
+			$("#LyftPlus").html(lyftPrice_p)
+
+		} else {}
+		
+	});
+});
+
+
+</script>
