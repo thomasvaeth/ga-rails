@@ -19,14 +19,32 @@ class MainController < ApplicationController
 
 	def location
 		latlng = params["latlng"]
-		url =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latlng+'&result_type=street_address&key='+ ENV["GSERVER"]
-		response = open(url).read
-	    render json: response
+		unless latlng.present?
+			flash[:danger] = "Unable to locate address, please try again"
+			render :json => { :success => false }
+		else
+			url =  'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latlng+'&result_type=street_address&key='+ ENV["GSERVER"]
+			response = open(url).read
+		    render json: response
+		end
 	end
 
 	def results
-		coords = Geocoder.coordinates(params_pass["to"]) 
-		location = Geocoder.coordinates(params_pass["from"]);
+		to = params_pass["to"]
+		from = params_pass["from"]
+		coords = Geocoder.coordinates(from) 
+		location = Geocoder.coordinates(to);
+
+		unless coords.present?
+			flash[:danger] = "Unable to locate #{to}, please try again"
+			redirect_to root_path and return
+		end
+
+		unless location.present?
+			flash[:danger] = "Unable to locate #{from}, please try again"
+			redirect_to root_path and return
+		end
+
 		dlat = coords[0]
 		dlon = coords[1]
 		slat = location[0]
@@ -48,8 +66,13 @@ class MainController < ApplicationController
   		config.server_token  = ENV["TOKEN"]
 		end
 		
+		if Geocoder::Calculations.distance_between([slat,slon], [dlat,dlon]) > 100
+			flash[:danger] = "Distance cannot exceed 100 miles."
+			redirect_to root_path and return
+		end
+
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
-                         end_latitude: dlat, end_longitude: dlon)
+                          end_latitude: dlat, end_longitude: dlon)
 		@ride_data = [uber_lyft_data(data), add1, add2, @current_user, @state]
 		uber_estimate = @ride_data[0][0].estimate.dup
 		lyft_estimate = @ride_data[0][3].estimate.dup
