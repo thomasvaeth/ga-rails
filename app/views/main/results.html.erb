@@ -1,5 +1,4 @@
 Results page
-
 <%=@ride_data[4]%>
 
 <div id="fromAddress">
@@ -24,7 +23,7 @@ Results page
 		<li><%=@ride_data[0][i].duration%></li>
 		<li id="<%=@ride_data[0][i].display_name.tr(" ", "")%>"><%=@ride_data[0][i].estimate%> 
 		   <% if @ride_data[0][i].surge_multiplier != nil && @ride_data[0][i].surge_multiplier > 1%>
-		    SURGE <%=@ride.data[0][i].surge_multiplier%>
+		    SURGE 
 	       <%end%> 
 		</li>
 		<li><%=@ride_data[0][i].distance%></li>

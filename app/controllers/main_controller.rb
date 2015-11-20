@@ -51,6 +51,20 @@ class MainController < ApplicationController
 		data = client.price_estimations(start_latitude: slat, start_longitude: slon,
                          end_latitude: dlat, end_longitude: dlon)
 		@ride_data = [uber_lyft_data(data), add1, add2, @current_user, @state]
+		uber_estimate = @ride_data[0][0].estimate.dup
+		lyft_estimate = @ride_data[0][3].estimate.dup
+		uber_estimate.slice!(0)
+		lyft_estimate.slice!(0)
+		uber_estimate = uber_estimate.split("-")
+		lyft_estimate = lyft_estimate.split("-")
+		uber_estimate = (uber_estimate[0].to_i+uber_estimate[1].to_i)/2.0
+		lyft_estimate = (lyft_estimate[0].to_i+lyft_estimate[1].to_i)/2.0
+		this_state = State.find_by state: @state
+		this_state.update_columns(uberfare: this_state.uberfare+uber_estimate)
+		this_state.update_columns(lyftfare: this_state.lyftfare+lyft_estimate)
+		this_state.update_columns(count: this_state.count+1)
+		puts uber_estimate
+		puts lyft_estimate
 	end
 
 	private
