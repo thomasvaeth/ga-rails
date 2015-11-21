@@ -16,6 +16,17 @@ Results page
 	<%end%>
 </div>
 
+		<%= form_tag results_path :method => :get do %>
+			<%= text_field_tag :from, @from%>
+			<%= text_field_tag :to, @to%>
+
+			<%= hidden_field_tag :loc%>
+			<%= hidden_field_tag :slat%>
+			<%= hidden_field_tag :slon%>
+			
+			<%= submit_tag "Search Again", id: "sub"%>
+		<%end%>
+
 <ul>
 <%length = (@ride_data[0].length-1)%>
 	<% for i in 0..length %>
@@ -52,8 +63,6 @@ Results page
 </a></button>
 
 <script>
-
-$(document).ready(function(){
 var from, to, directionsDisplay, directionsService
 function initMap(){
   directionsService = new google.maps.DirectionsService();
@@ -81,6 +90,10 @@ function calcRoute() {
     }
   });
 }
+
+$(document).ready(function(){
+initMap()
+
 	var originalLyftprice = $("#Lyft").html();
 	var originalLyftprice_p = $("#LyftPlus").html();
 
