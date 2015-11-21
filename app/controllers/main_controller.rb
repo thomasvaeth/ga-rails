@@ -36,10 +36,10 @@ class MainController < ApplicationController
 	end
 
 	def results
-		to = params_pass["to"]
-		from = params_pass["from"]
-		coords = Geocoder.coordinates(from) 
-		location = Geocoder.coordinates(to);
+		@to = params_pass["to"]
+		@from = params_pass["from"]
+		coords = Geocoder.coordinates(@from) 
+		location = Geocoder.coordinates(@to);
 
 		unless coords.present?
 			flash[:danger] = "Unable to locate #{to}, please try again"
