@@ -4,7 +4,7 @@ $(document).ready(function() {
 	  // Navigation
 	  menu: false,
 	  lockAnchors: false,
-	  anchors: ['first', 'second', 'third', 'fourth'],
+	  anchors: ['home', 'search', 'data', 'about'],
 	  navigation: false,
 	  navigationPosition: 'right',
 	  navigationTooltips: false,

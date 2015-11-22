@@ -12,6 +12,7 @@ $second-gradient: #263F5D;
 $third-gradient: #2B688E;
 $fourth-gradient: #6EA9C3;
 $fifth-gradient: #B8D2DD;
+$pink: #E6178B;
 
 .section-1 {
   @include linear-gradient($first-gradient, $second-gradient);
@@ -29,41 +30,43 @@ $fifth-gradient: #B8D2DD;
   @include linear-gradient($fourth-gradient, $fifth-gradient);
 }
 
-#menu a {
-	display: inline-block;
+.btn-lg,
+.input-lg {
+  font-family: 'Neou-Bold', sans-serif;
+  border-radius: 0;
 }
-// #menu li.active {
-// 	background: #666666;
-// 	background: rgba(0,0,0, 0.5);
-// 	color: #FFFFFF;
-// }
-// #menu li a {
-// 	text-decoration: none;
-// 	color: #000000;
-// }
-// #menu li.active a:hover {
-// 	color: #000000;
-// }
-// #menu li:hover {
-// 	background: rgba(255,255,255, 0.8);
-// }
-// #menu li a,
-// #menu li.active a {
-// 	padding: 9px 18px;
-// 	display: block;
-// }
-// #menu li.active a {
-// 	color: #FFFFFF;
-// }
+
+.btn-default {
+  background-color: #FFFFFF;
+  border: none;
+}
+
+.btn-default:hover,
+.btn-default:active {
+  background-color: #ECF0F1;
+}
+
+.form-control {
+  border: 1px solid #ECF0F1;
+}
+
 #menu {
 	position: fixed;
-	top: 0;
-	left: 0;
-	height: 40px;
-	z-index: 2;
-	width: 100%;
+	top: 10px;
+	left: 10px;
 	padding: 0;
 	margin: 0;
+  z-index: 2;
+
+  a,
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 5px;
+  }
 }
 
 .section {
@@ -73,14 +76,21 @@ $fifth-gradient: #B8D2DD;
     cursor: default;
   }
 
+  a,
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
 	.bottom-a,
 	.bottom-a:link,
 	.bottom-a:hover,
 	.bottom-a:active,
 	.bottom-a:visited {
 		display: block;
-		text-decoration: none;
-		color: white;
 		margin-right: 35px;
 		z-index: 2;
 	}
@@ -90,35 +100,49 @@ $fifth-gradient: #B8D2DD;
 		bottom: 15px;
 		z-index: 2;
 	}
+
+  .title {
+    font-family: 'Neou-Thin', sans-serif;
+    color: $pink;
+    font-size: 108px;
+  }
+
+  .description {
+    font-family: 'Neou-Thin', sans-serif;
+    font-size: 36px;
+    color: #FFFFFF;
+  }
 }
 
 .section-1 {
   p {
-    color: white;
+    color: #FFFFFF;
     font-size: 180px;
   }
 
   .first {
-    font-family: 'Neou-Thin';
+    font-family: 'Neou-Thin', sans-serif;
   }
 
   .second {
-    font-family: 'Neou-Bold';
+    font-family: 'Neou-Bold', sans-serif;
+    color: $pink;
   }
 }
 
 .section-2 {
-  #from {
-
-  }
-
-  #to {
-
+  .input-lg {
+    font-size: 27px;
   }
 }
 
 .section-4 {
-  color: white;
+  color: #FFFFFF;
+
+  .last,
+  .name {
+    font-family: 'Neou-Bold', sans-serif;
+  }
 
   .img-rounded {
     width: 350px;
@@ -126,24 +150,89 @@ $fifth-gradient: #B8D2DD;
   }
 
   .name {
-    font-family: 'Neou-Bold';
-    font-size: 36px;
+    font-size: 27px;
+    padding-top: 5px;
   }
 
-  .description {
-    font-family: 'Neou-Thin';
-    font-size: 18px;
+  i {
+    padding: 0 5px;
+  }
+
+  i:hover {
+    color: $pink;
   }
 }
 
-.btn-default {
-	background-color: #FFFFFF;
-	border: none;
+/* Stylesheet for data state map */
+.categories {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
 }
 
-.btn-default:hover,
-.btn-default:active {
-	background-color: #ECF0F1;
+.categories-choropleth {
+  fill: #ccc;
+}
+
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+
+#canvas svg {
+  border: 0px;
+}
+
+.tooltip_key {
+  font-weight: bold;
+}
+
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
+
+.x-axis {
+  fill: #000;
+}
+
+.chart {
+  background: #fff;
+  margin: 5px;
+}
+ 
+.chart .category-bar {
+  stroke: white;
+  fill: steelblue;
+}
+ 
+.chart .score {
+  fill: white;
+}
+ 
+.chart text.name {
+  fill: #000;
+}
+ 
+.chart line {
+  stroke: #c1c1c1;
+}
+ 
+.chart .rule {
+  fill: #000;
+}
+
+.main-category-text {
+  fill: #FF4A4A;
+}
+
+.main-category-bar {
+  stroke: #FF4A4A;
+  stroke-width: 2px;
 }
 
 /*!
@@ -152,7 +241,6 @@ Version - 3.4.0
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */
-
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;

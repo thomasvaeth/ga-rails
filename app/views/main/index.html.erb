@@ -1,23 +1,27 @@
 <ul id="menu">
-	<a href="#first"><button data-menuanchor="first" class="btn btn-lg btn-default">First</a></button>
-	<a href="#second"><button data-menuanchor="second" class="btn btn-lg btn-default">Second</button></a>
-	<a href="#third"><button data-menuanchor="third" class="btn btn-lg btn-default">Third</button></a>
-	<a href="#fourth"><button data-menuanchor="fourth" class="btn btn-lg btn-default">Fourth</button></a>
+	<a href="#home"><button data-menuanchor="home" class="btn btn-lg btn-default">Home</button></a>
+	<a href="#search"><button data-menuanchor="search" class="btn btn-lg btn-default">Search</button></a>
+	<a href="#data"><button data-menuanchor="data" class="btn btn-lg btn-default">Data</button></a>
+	<a href="#about"><button data-menuanchor="about" class="btn btn-lg btn-default">About</button></a>
 </ul>
 
 <div id="fullpage">
 	<div class="section section-1">
-		<p class="first animated bounceInLeft">Fare</p>
-		<p class="second animated bounceInLeft">Start</p>
+		<p class="animated bounceInLeft"><span class="first">Fare</span>
+		<span class="second">Start</span></p>
 		<a href="#second" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
 	</div>
 
 	<div class="section section-2">
+		<p class="title">Search</p>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<p class="description">Get fare quotes from Uber and Lyft, so you get the cheapest prices every time.</p>
+		</div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
 		<%= form_tag results_path :method => :get do %>
-			<%= text_field_tag :from, "", class: "form-control input-lg" %><br>
-			<%= text_field_tag :to, "", class: "form-control input-lg" %><br>
+			<%= text_field_tag :from, "", class: "form-control input-lg", placeholder: "Where are you getting picked up?" %><br>
+			<%= text_field_tag :to, "", class: "form-control input-lg", placeholder: "Where are you getting dropped off?" %><br>
 
 			<%= hidden_field_tag :loc %>
 			<%= hidden_field_tag :slat %>
@@ -43,27 +47,28 @@
 	</div>
 
 	<div class="section section-4">
+		<p class="title">About</p>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<p class="description">Fare <span class="last">Start</span> is a full stack web application built using Ruby on Rails for General Assembly Seattle.</p>
+		</div>
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 				<%= image_tag("todd.jpg", class: "img-rounded img-responsive center-block") %>
 				<div class="caption">
 					<p class="name">Todd Best</p>
-					<p class="description">Something</p>
-					<p><a href="https://www.linkedin.com/in/toddbest2004" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a href="https://github.com/toddbest2004" target="_blank"><i class="fa fa-github-alt fa-lg"></i></a></p>
+					<a href="https://www.linkedin.com/in/toddbest2004" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a><a href="https://github.com/toddbest2004" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a>
 				</div>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 				<%= image_tag("andrew.jpg", class: "img-rounded img-responsive center-block") %>
 				<p class="name">Andrew Mestas</p>
-				<p class="description">Something</p>
-				<p><a href="https://www.linkedin.com/in/andrew-mestas-86b74b84" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a href="https://github.com/andrew-mestas" target="_blank"><i class="fa fa-github-alt fa-lg"></i></a></p>
+				<a href="https://www.linkedin.com/in/andrew-mestas-86b74b84" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a><a href="https://github.com/andrew-mestas" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 				<%= image_tag("thomas.jpg", class: "img-rounded img-responsive center-block") %>
 				<div class="caption">
 					<p class="name">Thomas Vaeth</p>
-					<p class="description">Something</p>
-					<p><a href="https://www.linkedin.com/in/thomasvaeth" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a href="https://github.com/thomasvaeth" target="_blank"><i class="fa fa-github-alt fa-lg"></i></a></p>
+					<a href="https://www.linkedin.com/in/thomasvaeth" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a><a href="https://github.com/thomasvaeth" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a>
 				</div>
 			</div>
 		</div>
@@ -72,9 +77,6 @@
 </div>
 
 
-
-
-<link rel="stylesheet" type="text/css" href="mapstyle.css">
 <script src="/mapscript.js"></script>
 
 <script>
