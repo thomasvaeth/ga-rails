@@ -15,12 +15,13 @@
  */
 
 @font-face {
-  font-family: 'Arkhip'; 
-  src: url('Arkhip.ttf');
+  font-family: 'Neou-Thin'; 
+  src: url('Neou-Thin.ttf');
 }
 
-#title {
-  font-family: 'Arkhip' !important;
+@font-face {
+  font-family: 'Neou-Bold'; 
+  src: url('Neou-Bold.ttf');
 }
 
 /* stylesheet for your custom graph */

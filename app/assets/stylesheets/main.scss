@@ -66,31 +66,74 @@ $fifth-gradient: #B8D2DD;
 	margin: 0;
 }
 
-/* Font Awesome arrows */
 .section {
 	text-align: center;
 
-	a,
-	a:link,
-	a:hover,
-	a:active,
-	a:visited {
+  p {
+    cursor: default;
+  }
+
+	.bottom-a,
+	.bottom-a:link,
+	.bottom-a:hover,
+	.bottom-a:active,
+	.bottom-a:visited {
 		display: block;
 		text-decoration: none;
 		color: white;
-		margin-right: 42px;
+		margin-right: 35px;
 		z-index: 2;
 	}
 
-	i {
+	.bottom-i {
 		position: absolute;
 		bottom: 15px;
 		z-index: 2;
 	}
 }
 
-p {
-	cursor: default;
+.section-1 {
+  p {
+    color: white;
+    font-size: 180px;
+  }
+
+  .first {
+    font-family: 'Neou-Thin';
+  }
+
+  .second {
+    font-family: 'Neou-Bold';
+  }
+}
+
+.section-2 {
+  #from {
+
+  }
+
+  #to {
+
+  }
+}
+
+.section-4 {
+  color: white;
+
+  .img-rounded {
+    width: 350px;
+    border-radius: 0;
+  }
+
+  .name {
+    font-family: 'Neou-Bold';
+    font-size: 36px;
+  }
+
+  .description {
+    font-family: 'Neou-Thin';
+    font-size: 18px;
+  }
 }
 
 .btn-default {
@@ -161,4 +204,77 @@ Copyright (c) 2015 Daniel Eden
 .pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse;
+}
+
+@-webkit-keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
 }
