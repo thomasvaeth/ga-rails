@@ -23,54 +23,6 @@
   font-family: 'Arkhip' !important;
 }
 
-/* Customized fullPage.js navbar */
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-  background: #FFFFFF;
-  width: 10px;
-  height: 10px;
-  margin: -5px 0 0 -5px;
-  z-index: 5;
-}
-
-#fp-nav ul li a.active span,
-.fp-slidesNav ul li a.active span,
-#fp-nav ul li:hover a.active span,
-.fp-slidesNav ul li:hover a.active span {
-  background: transparent;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
-  box-sizing: border-box;
-  border: 2px solid #FFFFFF;
-  z-index: 5;
-}
-
-.section-1 {
-  background: -webkit-gradient(linear, top left, bottom left, from(#131F2C), to(#263F5D));
-  background: -webkit-linear-gradient(#131F2C, #263F5D);
-  background: linear-gradient(#131F2C, #263F5D);
-}
-
-.section-2 {
-  background: -webkit-gradient(linear, top left, bottom left, from(#263F5D), to(#2B688E));
-  background: -webkit-linear-gradient(#263F5D, #2B688E);
-  background: linear-gradient(#263F5D, #2B688E);
-}
-
-.section-3 {
-  background: -webkit-gradient(linear, top left, bottom left, from(#2B688E), to(#6EA9C3));
-  background: -webkit-linear-gradient(#2B688E, #6EA9C3);
-  background: linear-gradient(#2B688E, #6EA9C3);
-}
-
-.section-4 {
-  background: -webkit-gradient(linear, top left, bottom left, from(#6EA9C3), to(#B8D2DD));
-  background: -webkit-linear-gradient(#6EA9C3, #B8D2DD);
-  background: linear-gradient(#6EA9C3, #B8D2DD);
-}
-
-
 /* stylesheet for your custom graph */
 
 .categories {

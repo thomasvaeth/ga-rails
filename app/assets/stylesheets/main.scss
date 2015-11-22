@@ -1,3 +1,164 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin linear-gradient($top, $bottom) {
+  background: -webkit-gradient(linear, top left, bottom left, from($top), to($bottom));
+  background: -webkit-linear-gradient($top, $bottom);
+  background: linear-gradient($top, $bottom);
+}
+
+$first-gradient: #131F2C;
+$second-gradient: #263F5D;
+$third-gradient: #2B688E;
+$fourth-gradient: #6EA9C3;
+$fifth-gradient: #B8D2DD;
+
+.section-1 {
+  @include linear-gradient($first-gradient, $second-gradient);
+}
+
+.section-2 {
+  @include linear-gradient($second-gradient, $third-gradient);
+}
+
+.section-3 {
+  @include linear-gradient($third-gradient, $fourth-gradient);
+}
+
+.section-4 {
+  @include linear-gradient($fourth-gradient, $fifth-gradient);
+}
+
+#menu a {
+	display: inline-block;
+}
+// #menu li.active {
+// 	background: #666666;
+// 	background: rgba(0,0,0, 0.5);
+// 	color: #FFFFFF;
+// }
+// #menu li a {
+// 	text-decoration: none;
+// 	color: #000000;
+// }
+// #menu li.active a:hover {
+// 	color: #000000;
+// }
+// #menu li:hover {
+// 	background: rgba(255,255,255, 0.8);
+// }
+// #menu li a,
+// #menu li.active a {
+// 	padding: 9px 18px;
+// 	display: block;
+// }
+// #menu li.active a {
+// 	color: #FFFFFF;
+// }
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 40px;
+	z-index: 2;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Font Awesome arrows */
+.section {
+	text-align: center;
+
+	a,
+	a:link,
+	a:hover,
+	a:active,
+	a:visited {
+		display: block;
+		text-decoration: none;
+		color: white;
+		margin-right: 42px;
+		z-index: 2;
+	}
+
+	i {
+		position: absolute;
+		bottom: 15px;
+		z-index: 2;
+	}
+}
+
+p {
+	cursor: default;
+}
+
+.btn-default {
+	background-color: #FFFFFF;
+	border: none;
+}
+
+.btn-default:hover,
+.btn-default:active {
+	background-color: #ECF0F1;
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Version - 3.4.0
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}

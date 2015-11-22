@@ -5,7 +5,7 @@ $(document).ready(function() {
 	  menu: false,
 	  lockAnchors: false,
 	  anchors: ['first', 'second', 'third', 'fourth'],
-	  navigation: true,
+	  navigation: false,
 	  navigationPosition: 'right',
 	  navigationTooltips: false,
 	  showActiveTooltip: false,

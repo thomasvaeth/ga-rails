@@ -1,6 +1,16 @@
+<ul id="menu">
+	<a href="#first" class="btn btn-lg btn-default"><button data-menuanchor="first">First</button></a>
+	<a href="#second" class="btn btn-lg btn-default"><button data-menuanchor="second">Second</button></a>
+	<a href="#third" class="btn btn-lg btn-default"><button data-menuanchor="third">Third</button></a>
+	<a href="#fourth" class="btn btn-lg btn-default"><button data-menuanchor="fourth">Fourth</button></a>
+</ul>
+
 <div id="fullpage">
 	<div class="section section-1">
+		<a href="#second"><i class="fa fa-sort-desc fa-4x animated pulse infinite"></i></a>
+	</div>
 
+	<div class="section section-2">
 		<%= form_tag results_path :method => :get do %>
 			<%= text_field_tag :from %>
 			<%= text_field_tag :to %>
@@ -12,23 +22,22 @@
 			<%= submit_tag "Submit", id: "sub" %>
 		<%end%>
 
+		<a href="#third"><i class="fa fa-sort-desc fa-4x animated pulse infinite"></i></a>
 	</div>
 
-	<div class="section section-2">
+	<div class="section section-3">
 		<div id="tooltip-container"></div>
 		<div id="canvas-svg"></div>
 
 		<button id="uberMap">Uber</button>
 		<button id="lyftMap">Lyft</button>
 		<button id="countMap">Count</button>
-	</div>
 
-	<div class="section section-3">
-		About
+		<a href="#fourth"><i class="fa fa-sort-desc fa-4x animated pulse infinite"></i></a>
 	</div>
 
 	<div class="section section-4">
-		Something Else
+		About
 	</div>
 	
 </div>
