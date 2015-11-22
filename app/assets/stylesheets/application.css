@@ -23,6 +23,30 @@
   font-family: 'Arkhip' !important;
 }
 
+/* Customized fullPage.js navbar */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #FFFFFF;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+}
+
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  box-sizing: border-box;
+  border: 2px solid #FFFFFF;
+}
+
+
+
+
 /* stylesheet for your custom graph */
 
 .categories {

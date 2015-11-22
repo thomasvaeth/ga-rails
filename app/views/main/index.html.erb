@@ -1,16 +1,15 @@
 <div id="fullpage">
 	<div class="section section-1">
-		<h1 id="title">Home Page</h1>
 
 		<%= form_tag results_path :method => :get do %>
-			<%= text_field_tag :from%>
-			<%= text_field_tag :to%>
+			<%= text_field_tag :from %>
+			<%= text_field_tag :to %>
 
-			<%= hidden_field_tag :loc%>
-			<%= hidden_field_tag :slat%>
-			<%= hidden_field_tag :slon%>
+			<%= hidden_field_tag :loc %>
+			<%= hidden_field_tag :slat %>
+			<%= hidden_field_tag :slon %>
 			
-			<%= submit_tag "Submit", id: "sub"%>
+			<%= submit_tag "Submit", id: "sub" %>
 		<%end%>
 
 	</div>
@@ -18,9 +17,10 @@
 	<div class="section section-2">
 		<div id="tooltip-container"></div>
 		<div id="canvas-svg"></div>
-		<button id="1">Uber</button>
-		<button id="2">Lyft</button>
-		<button id="3">Count</button>
+
+		<button id="uberMap">Uber</button>
+		<button id="lyftMap">Lyft</button>
+		<button id="countMap">Count</button>
 	</div>
 
 	<div class="section section-3">
@@ -35,46 +35,42 @@
 <script src="/mapscript.js"></script>
 
 <script>
-	$(document).ready(function(){
+$(document).ready(function() {
 	renderMap('byCount');
-	$("#1").click(function(){
+	$("#uberMap").click(function() {
 		renderMap('byUber');
 	});
-	$("#2").click(function(){
+	$("#lyftMap").click(function() {
 		renderMap('byLyft');
 	});
-	$("#3").click(function(){
-		renderMap('byCount')
+	$("#countMap").click(function() {
+		renderMap('byCount');
 	});
 
 	$.ajax(
 		"http://ip-api.com/json",
 		{
-			method  : "GET",
-			success : function(data,textStatus,garbage){
+			method : "GET",
+			success : function(data,textStatus,garbage) {
 				$("#loc").val(data.regionName);
-				$("#slat").val(data.lat)
-				$("#slon").val(data.lon)	
-				var latlng = String(data.lat) +","+ String(data.lon);
-				var data = {latlng}
-				console.log(latlng)		
-	$.ajax(
-		"/location",
-		{
-			method  : "GET",
-			data    : data,
-			success : function(data,textStatus,garbage){
-				$("#from").val(data.results[0].formatted_address);	
-				$("#from").data('default', data.results[0].formatted_address)	
+				$("#slat").val(data.lat);
+				$("#slon").val(data.lon);	
+				var latlng = String(data.lat) + "," + String(data.lon);
+				var data = {latlng};		
+				$.ajax(
+					"/location",
+					{
+						method : "GET",
+						data : data,
+						success : function(data,textStatus,garbage) {
+							$("#from").val(data.results[0].formatted_address);	
+							$("#from").data('default', data.results[0].formatted_address);
+						}
+					}
+				);
 			}
 		}
 	);
 
-			}
-		}
-	);
-
-
-
-	});
+});
 </script>
