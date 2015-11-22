@@ -16,16 +16,16 @@ Results page
 	<%end%>
 </div>
 
-		<%= form_tag results_path :method => :get do %>
-			<%= text_field_tag :from, @from%>
-			<%= text_field_tag :to, @to%>
+<%= form_tag results_path :method => :get do %>
+	<%= text_field_tag :from, @from%>
+	<%= text_field_tag :to, @to%>
 
-			<%= hidden_field_tag :loc%>
-			<%= hidden_field_tag :slat%>
-			<%= hidden_field_tag :slon%>
-			
-			<%= submit_tag "Search Again", id: "sub"%>
-		<%end%>
+	<%= hidden_field_tag :loc%>
+	<%= hidden_field_tag :slat%>
+	<%= hidden_field_tag :slon%>
+	
+	<%= submit_tag "Search Again", id: "sub"%>
+<%end%>
 
 <ul>
 <%length = (@ride_data[0].length-1)%>
@@ -35,7 +35,7 @@ Results page
 		<li id="<%=@ride_data[0][i].display_name.tr(" ", "")%>"><%=@ride_data[0][i].estimate%> 
 		   <% if @ride_data[0][i].surge_multiplier != nil && @ride_data[0][i].surge_multiplier > 1%>
 		    SURGE 
-	       <%end%> 
+		    <%end%> 
 		</li>
 		<li><%=@ride_data[0][i].distance%></li>
 		<li><%=@ride_data[0][i].display_name%></li>

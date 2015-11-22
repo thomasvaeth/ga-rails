@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= include_gon %>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Full Page layout, navbar, and menu -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <script type="text/javascript" src="/googlesearch.js"></script>
-    <script src="d3.js"></script>
+
+    <!-- TopoJSON / GeoJSON -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/styles_main.css">
 
     <title>GaRails</title>
@@ -24,11 +28,8 @@
   <body>
     <%= yield %>
 
-    <!-- jQuery and jQuery UI -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <!-- Full Page -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.5/jquery.fullPage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
     <!-- Google Maps -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_OcPqd4-0Dsx7LK_3wHvVzvKcJRWSwjQ&libraries=places&callback=initMap"></script>
 
