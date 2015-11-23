@@ -151,6 +151,7 @@ function initMap(){
   calcRoute()
 }
 
+
 function calcRoute() {
   var request = {
     origin:from,
@@ -163,9 +164,11 @@ function calcRoute() {
     }
   });
 }
+</script>
 
+<script>
 $(document).ready(function(){
-	initMap()
+	// initMap()
 
 	var originalLyftprice = $("#Lyft").html();
 	var originalLyftprice_p = $("#LyftPlus").html();

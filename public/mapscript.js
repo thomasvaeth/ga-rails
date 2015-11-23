@@ -91,7 +91,9 @@ var path = d3.geo.path();
 
 var svg = d3.select("#canvas-svg").append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .style("position", 'relative')
+    .style("top", '50px');
 
 
 var renderMap = function(filter){
@@ -152,7 +154,7 @@ function makeMap(us,choice) {
         }
       })
       .attr("d", path)
-      .on("mousemove", function(d) {
+      .on("click", function(d) {
           var html = "";
 
           html += "<div class=\"tooltip_kv\">";
@@ -178,13 +180,15 @@ function makeMap(us,choice) {
           
           if (d3.event.layerX < map_width / 2) {
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 600) + "px")
-              .style("left", (d3.event.layerX + 15) + "px");
+              .style("top", (d3.event.layerY + 1300) + "px")
+              .style("left", (d3.event.layerX + 15) + "px")
+              .style("z-index", "1");
           } else {
             var tooltip_width = $("#tooltip-container").width();
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 600) + "px")
-              .style("left", (d3.event.layerX - tooltip_width - 30) + "px");
+              .style("top", (d3.event.layerY + 1300) + "px")
+              .style("left", (d3.event.layerX - tooltip_width + 120) + "px")
+              .style("z-index", "1")
           }
       })
       .on("mouseout", function() {

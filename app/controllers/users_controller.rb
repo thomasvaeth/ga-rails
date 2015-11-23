@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 		end
 	end
 
+
+
 	def newAddress
 		if @current_user
 			@current_user.address.create address: params[:address]
