@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// Full Page
-	$('#fullpage-three').fullpage({
+	$('#fullpage-four').fullpage({
 	  // Navigation
 	  menu: false,
 	  lockAnchors: false,
