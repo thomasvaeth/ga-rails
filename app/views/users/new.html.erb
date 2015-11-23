@@ -26,11 +26,14 @@
           <%= user.text_field :email, :label => 'Email address', :placeholder => 'Email', class: "form-control input-lg" %>
           <%= user.password_field :password, :label => 'Create a password', :placeholder => 'Password (8 character minimum)', class: "form-control input-lg" %>
           <%= user.password_field :password_confirmation, :hide_label => true, :placeholder => 'Confirm Password', class: "form-control input-lg" %>
-
+    </div>
+        <div class=" form-group col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+          <%= user.text_field :ubercode, :placeholder => 'Uber Code', class: "form-control input-lg" %>
+          <%= user.text_field :lyftcode, :placeholder => 'Lyft Code', class: "form-control input-lg" %>
+       </div>
           <%= user.submit 'Sign Up', class: "btn btn-lg btn-default" %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
 
