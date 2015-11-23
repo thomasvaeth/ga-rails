@@ -77,9 +77,9 @@ var countById = d3.map();
 var colors = [];
 
 for (var i = 0; i < COLOR_COUNTS; i++) {
-  var r = Interpolate(255, 229, COLOR_COUNTS, i);
-  var g = Interpolate(174, 48, COLOR_COUNTS, i);
-  var b = Interpolate(174, 48, COLOR_COUNTS, i);
+  var r = Interpolate(204, 76, COLOR_COUNTS, i);
+  var g = Interpolate(204, 76, COLOR_COUNTS, i);
+  var b = Interpolate(204, 76, COLOR_COUNTS, i);
   colors.push(new Color(r, g, b));
 }
 
@@ -93,7 +93,8 @@ var svg = d3.select("#canvas-svg").append("svg")
     .attr("width", width)
     .attr("height", height)
     .style("position", 'relative')
-    .style("top", '50px');
+    .style("top", '50px')
+    .style("z-index", "0");
 
 
 var renderMap = function(filter){
@@ -149,12 +150,12 @@ function makeMap(us,choice) {
           return "rgb(" + color.r + "," + color.g +
               "," + color.b + ")";
         } else if(filter.get(d.id) == 0){
-          return "rgb(" + 255 + "," + 190 +
-              "," + 190 + ")";
+          return "rgb(" + 210 + "," + 210 +
+              "," + 210 + ")";
         }
       })
       .attr("d", path)
-      .on("click", function(d) {
+      .on("mouseover", function(d) {
           var html = "";
 
           html += "<div class=\"tooltip_kv\">";
