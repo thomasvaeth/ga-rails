@@ -10,10 +10,10 @@ class MainController < ApplicationController
 	@@COSTPERMINUTE = 0.24
 	@@COSTPERMINUTE_P = 0.36
 	@@TRUSTFEE = 1.95
+	@@count = 0
 
 
 	def index
-
 		@map_data = State.select("id,state,uberfare,lyftfare,count,milestotal").order("id ASC")
 		gon.mapData = @map_data
 	end
@@ -36,6 +36,7 @@ class MainController < ApplicationController
 	end
 
 	def results
+		@codes = get_code
 		@to = params_pass["to"]
 		@from = params_pass["from"]
 		coords = Geocoder.coordinates(@from) 
@@ -108,6 +109,18 @@ class MainController < ApplicationController
 
 	def params_pass 
 		params.permit(:from, :to, :loc, :slat, :slon)
+	end
+
+	def get_code
+		@@count += 1
+		@codes = User.select("id,ubercode,lyftcode").order("id ASC")
+		@index = @codes
+		@codes = @codes[(@@count % @codes.length)]
+		while(@codes["ubercode"].empty? || @codes["lyftcode"].empty?)
+			@@count += 1
+			@codes = @index[((@@count) % @index.length)]
+		end
+		@codes
 	end
 
 	class Lyft 
