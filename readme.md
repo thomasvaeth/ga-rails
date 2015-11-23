@@ -12,6 +12,7 @@ Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mes
 * IP API
 * HTML
 * CSS
+* Sass
 * JavaScript
 * jQuery
 * D3.js
