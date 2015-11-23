@@ -14,8 +14,6 @@
 var data = {};
 data = gon.mapData;
 
-console.log(gon.mapData);
-
 var WIDTH = 900, HEIGHT = 560;
 
 var COLOR_COUNTS = 9;
@@ -178,7 +176,6 @@ function makeMap(us,choice) {
           var coordinates = d3.mouse(this);
           
           var map_width = $('.categories-choropleth')[0].getBoundingClientRect().width;
-          
           if (d3.event.layerX < map_width / 2) {
             d3.select("#tooltip-container")
               .style("top", (d3.event.layerY + 1300) + "px")
