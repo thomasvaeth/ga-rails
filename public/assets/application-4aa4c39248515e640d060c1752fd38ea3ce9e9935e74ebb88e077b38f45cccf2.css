@@ -1,0 +1,451 @@
+/* line 17, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-1 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#131F2C), to(#263F5D));
+  background: -webkit-linear-gradient(#131F2C, #263F5D);
+  background: linear-gradient(#131F2C, #263F5D);
+}
+
+/* line 21, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-2 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#263F5D), to(#2B688E));
+  background: -webkit-linear-gradient(#263F5D, #2B688E);
+  background: linear-gradient(#263F5D, #2B688E);
+}
+
+/* line 25, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-3 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#2B688E), to(#6EA9C3));
+  background: -webkit-linear-gradient(#2B688E, #6EA9C3);
+  background: linear-gradient(#2B688E, #6EA9C3);
+}
+
+/* line 29, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#6EA9C3), to(#B8D2DD));
+  background: -webkit-linear-gradient(#6EA9C3, #B8D2DD);
+  background: linear-gradient(#6EA9C3, #B8D2DD);
+}
+
+/* line 33, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-5 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#131F2C), to(#2B688E));
+  background: -webkit-linear-gradient(#131F2C, #2B688E);
+  background: linear-gradient(#131F2C, #2B688E);
+}
+
+/* line 37, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-6 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#2B688E), to(#B8D2DD));
+  background: -webkit-linear-gradient(#2B688E, #B8D2DD);
+  background: linear-gradient(#2B688E, #B8D2DD);
+}
+
+/* line 41, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+html,
+body {
+  font-family: 'Neou-Thin', sans-serif;
+}
+
+/* line 46, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.btn-lg,
+.input-lg {
+  font-family: 'Neou-Bold', sans-serif;
+  border-radius: 0;
+}
+
+/* line 52, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.btn-default {
+  background-color: #FFFFFF;
+  border: none;
+}
+
+/* line 57, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.btn-default:hover,
+.btn-default:active {
+  background-color: #ECF0F1;
+}
+
+/* line 62, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.form-control {
+  border: 1px solid #ECF0F1;
+}
+
+/* line 67, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#navigation div {
+  position: fixed;
+  top: 10px;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+/* line 75, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#navigation a,
+#navigation a:link,
+#navigation a:hover,
+#navigation a:active,
+#navigation a:visited {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 5px;
+}
+/* line 85, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#navigation #menu {
+  left: 10px;
+}
+/* line 89, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#navigation #user {
+  right: 10px;
+}
+
+/* line 94, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section {
+  text-align: center;
+  color: #FFFFFF;
+}
+/* line 98, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section p {
+  cursor: default;
+}
+/* line 102, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section a,
+.section a:link,
+.section a:hover,
+.section a:active,
+.section a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+/* line 111, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section .bottom-a,
+.section .bottom-a:link,
+.section .bottom-a:hover,
+.section .bottom-a:active,
+.section .bottom-a:visited {
+  display: block;
+  margin-right: 35px;
+  z-index: 2;
+}
+/* line 121, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section .bottom-i {
+  position: absolute;
+  bottom: 15px;
+  z-index: 2;
+}
+/* line 127, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section .title {
+  color: #E6178B;
+  font-size: 108px;
+}
+/* line 132, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section .description {
+  font-size: 36px;
+}
+
+/* line 138, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-1 p {
+  font-size: 180px;
+}
+/* line 142, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-1 .second {
+  font-family: 'Neou-Bold', sans-serif;
+  color: #E6178B;
+}
+
+/* line 149, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-2 .input-lg {
+  font-size: 27px;
+}
+
+/* line 155, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-3 p {
+  font-family: 'Neou-Bold', sans-serif;
+  font-size: 18px;
+}
+
+/* line 162, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 .last,
+.section-4 .name {
+  font-family: 'Neou-Bold', sans-serif;
+}
+/* line 167, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 .img-rounded {
+  width: 350px;
+  border-radius: 0;
+}
+/* line 172, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 .name {
+  font-size: 27px;
+  padding-top: 5px;
+}
+/* line 177, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 i {
+  padding: 0 5px;
+}
+/* line 181, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.section-4 i:hover {
+  color: #E6178B;
+}
+
+/* Stylesheet for data state map */
+/* line 187, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.categories {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+/* line 193, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.categories-choropleth {
+  fill: #ccc;
+}
+
+/* line 197, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+
+/* line 206, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+#canvas svg {
+  border: 0px;
+}
+
+/* line 210, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.tooltip_key {
+  font-weight: bold;
+}
+
+/* line 214, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
+
+/* line 219, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.x-axis {
+  fill: #000;
+}
+
+/* line 223, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart {
+  background: #fff;
+  margin: 5px;
+}
+
+/* line 228, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart .category-bar {
+  stroke: white;
+  fill: steelblue;
+}
+
+/* line 233, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart .score {
+  fill: white;
+}
+
+/* line 237, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart text.name {
+  fill: #000;
+}
+
+/* line 241, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart line {
+  stroke: #c1c1c1;
+}
+
+/* line 245, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.chart .rule {
+  fill: #000;
+}
+
+/* line 249, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.main-category-text {
+  fill: #FF4A4A;
+}
+
+/* line 253, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.main-category-bar {
+  stroke: #FF4A4A;
+  stroke-width: 2px;
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Version - 3.4.0
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+/* line 264, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 271, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+/* line 312, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* line 385, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/main.scss */
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+/* line 14, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/sessions.scss */
+.section-7 {
+  background: -webkit-gradient(linear, top left, bottom left, from(#131F2C), to(#2B688E));
+  background: -webkit-linear-gradient(#131F2C, #2B688E);
+  background: linear-gradient(#131F2C, #2B688E);
+  text-align: left;
+  color: #FFFFFF;
+}
+/* line 20, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/sessions.scss */
+.section-7 label {
+  font-size: 18px;
+}
+/* line 24, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/sessions.scss */
+.section-7 p {
+  text-align: center;
+  cursor: default;
+}
+/* line 29, /Users/thomasvaeth/WDI_SEA_04/ga-rails/app/assets/stylesheets/sessions.scss */
+.section-7 .title {
+  color: #E6178B;
+  font-size: 108px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+@font-face {
+  font-family: 'Neou-Thin'; 
+  src: url('/assets/Neou-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Neou-Bold'; 
+  src: url('/assets/Neou-Bold.ttf');
+}
+
+.btn:focus,
+.btn:active {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.form-control:focus,
+.form-control:active {
+	border: 1px solid #ECF0F1;
+	box-shadow: none;
+}

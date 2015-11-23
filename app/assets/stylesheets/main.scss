@@ -183,6 +183,30 @@ body {
   }
 }
 
+.section-5 {
+  .form-control:first-child {
+    display: inline-block;
+  }
+
+  .well {
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .uber {
+    background-color: #000000;
+  }
+
+  .lyft {
+    background-color: #268A85;
+  }
+}
+
 /* Stylesheet for data state map */
 .categories {
   fill: none;

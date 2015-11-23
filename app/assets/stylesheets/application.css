@@ -16,12 +16,12 @@
 
 @font-face {
   font-family: 'Neou-Thin'; 
-  src: url('Neou-Thin.ttf');
+  src: url('/assets/Neou-Thin.ttf');
 }
 
 @font-face {
   font-family: 'Neou-Bold'; 
-  src: url('Neou-Bold.ttf');
+  src: url('/assets/Neou-Bold.ttf');
 }
 
 .btn:focus,
@@ -34,4 +34,8 @@
 .form-control:active {
 	border: 1px solid #ECF0F1;
 	box-shadow: none;
+}
+
+.alert {
+	text-align: center;
 }

@@ -9,10 +9,19 @@
 
 $first-gradient: #131F2C;
 $third-gradient: #2B688E;
+$fifth-gradient: #B8D2DD;
 $pink: #E6178B;
 
 .section-7 {
-	@include linear-gradient($first-gradient, $third-gradient);
+  @include linear-gradient($first-gradient, $third-gradient);
+}
+
+.section-8 {
+  @include linear-gradient($third-gradient, $fifth-gradient);
+}
+
+.section-7,
+.section-8 {
 
 	text-align: left;
   color: #FFFFFF;
