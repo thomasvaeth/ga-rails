@@ -23,3 +23,15 @@
   font-family: 'Neou-Bold'; 
   src: url('Neou-Bold.ttf');
 }
+
+.btn:focus,
+.btn:active {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.form-control:focus,
+.form-control:active {
+	border: 1px solid #ECF0F1;
+	box-shadow: none;
+}
