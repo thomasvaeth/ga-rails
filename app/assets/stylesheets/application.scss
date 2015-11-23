@@ -16,12 +16,12 @@
 
 @font-face {
   font-family: 'Neou-Thin'; 
-  src: url('Neou-Thin.ttf');
+  src: font-url('Neou-Thin.ttf');
 }
 
 @font-face {
   font-family: 'Neou-Bold'; 
-  src: url('Neou-Bold.ttf');
+  src: font-url('Neou-Bold.ttf');
 }
 
 .btn:focus,
@@ -36,6 +36,20 @@
 	box-shadow: none;
 }
 
+/* Signin/Signup alerts */
 .alert {
 	text-align: center;
+}
+
+/* Number input field */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Google map */
+#map{
+	width: 400px;
+	height: 400px;
 }
