@@ -181,13 +181,13 @@ function makeMap(us,choice) {
           
           if (d3.event.layerX < map_width / 2) {
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 1300) + "px")
+              .style("top", (d3.event.layerY + 1600) + "px")
               .style("left", (d3.event.layerX + 15) + "px")
               .style("z-index", "1");
           } else {
             var tooltip_width = $("#tooltip-container").width();
             d3.select("#tooltip-container")
-              .style("top", (d3.event.layerY + 1300) + "px")
+              .style("top", (d3.event.layerY + 1600) + "px")
               .style("left", (d3.event.layerX - tooltip_width + 120) + "px")
               .style("z-index", "1")
           }
