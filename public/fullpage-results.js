@@ -9,7 +9,7 @@ $(document).ready(function() {
 	  navigationPosition: 'right',
 	  navigationTooltips: false,
 	  showActiveTooltip: false,
-	  slidesNavigation: false,
+	  slidesNavigation: true,
 	  slidesNavPosition: 'bottom',
 
 	  // Scrolling
