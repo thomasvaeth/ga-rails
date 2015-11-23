@@ -16,12 +16,12 @@
 
 @font-face {
   font-family: 'Neou-Thin'; 
-  src: url('/assets/Neou-Thin.ttf');
+  src: url('Neou-Thin.ttf');
 }
 
 @font-face {
   font-family: 'Neou-Bold'; 
-  src: url('/assets/Neou-Bold.ttf');
+  src: url('Neou-Bold.ttf');
 }
 
 .btn:focus,
