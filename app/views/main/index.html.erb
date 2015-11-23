@@ -106,14 +106,14 @@ $(document).ready(function() {
 	});
 
 	$.ajax(
-		"http://ip-api.com/json",
+		"https://freegeoip.net/json/",
 		{
 			method : "GET",
 			success : function(data,textStatus,garbage) {
-				$("#loc").val(data.regionName);
-				$("#slat").val(data.lat);
-				$("#slon").val(data.lon);	
-				var latlng = String(data.lat) + "," + String(data.lon);
+				$("#loc").val(data.region_name);
+				$("#slat").val(data.latitude);
+				$("#slon").val(data.longitude);	
+				var latlng = String(data.latitude) + "," + String(data.longitude);
 				var data = {latlng};		
 				$.ajax(
 					"/location",
