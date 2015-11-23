@@ -33,7 +33,26 @@
 				<%= form_tag results_path :method => :get do %>
 					<%= text_field_tag :from, "", class: "form-control input-lg", placeholder: "Where are you getting picked up?" %><br>
 					<%= text_field_tag :to, "", class: "form-control input-lg", placeholder: "Where are you getting dropped off?" %><br>
-
+<% if @current_user %>
+	<% if @addresses %>
+		<select id="savedFrom">
+		<option value="">Saved Addresses</option>
+		<% @addresses.each do |address| %>
+		<option value="<%= address.address %>"><%= address.address %></option>
+		<% end %>
+		</select>
+	<% end %>
+<% end %>
+<% if @current_user %>
+	<% if @addresses %>
+		<select id="savedTo">
+		<option value="">Saved Addresses</option>
+		<% @addresses.each do |address| %>
+		<option value="<%= address.address %>"><%= address.address %></option>
+		<% end %>
+		</select>
+	<% end %>
+<% end %>
 					<%= hidden_field_tag :loc %>
 					<%= hidden_field_tag :slat %>
 					<%= hidden_field_tag :slon %>

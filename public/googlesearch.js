@@ -8,6 +8,8 @@ autocomplete = new google.maps.places.Autocomplete(from, options);
 var to = document.getElementById('to')
 autocomplete2 = new google.maps.places.Autocomplete(to, options);
 
+$("#savedTo").on("change",function(){$("#to").val($("#savedTo").val())})
+$("#savedFrom").on("change",function(){$("#from").val($("#savedFrom").val())})
 $("#to").on("focus", function(){$(this).select()})
 $("#from").on("focus", function(){$(this).select()})
 $("#saveFrom").click(function(){saveAddress("#fromAddress",$(this))})

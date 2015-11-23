@@ -11,18 +11,22 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create user_params
-		if @user
-			session[:user_id] = @user.id
-			flash[:success] = "User created!!"
-			redirect_to root_path
+		tempuser = User.find_by_email(user_params[:email])
+		if tempuser
+			flash[:danger] = "User Already Exists"
+			redirect_to '/users/new'
 		else
-			flash[:danger] = "Credentials Invalid!!"
-			redirect_to signup_path
+			@user = User.create user_params
+			if @user
+				session[:user_id] = @user.id
+				flash[:success] = "User created!!"
+				redirect_to root_path
+			else
+				flash[:danger] = "Credentials Invalid!!"
+				redirect_to '/users/new'
+			end
 		end
 	end
-
-
 
 	def newAddress
 		if @current_user

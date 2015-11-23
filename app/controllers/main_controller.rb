@@ -14,6 +14,9 @@ class MainController < ApplicationController
 
 
 	def index
+		if @current_user
+			@addresses = @current_user.address
+		end
 		@map_data = State.select("id,state,uberfare,lyftfare,count,milestotal").order("id ASC")
 		gon.mapData = @map_data
 	end
@@ -43,12 +46,12 @@ class MainController < ApplicationController
 		location = Geocoder.coordinates(@to);
 
 		unless coords.present?
-			flash[:danger] = "Unable to locate #{to}, please try again"
+			flash[:danger] = "Unable to locate #{@to}, please try again"
 			redirect_to root_path and return
 		end
 
 		unless location.present?
-			flash[:danger] = "Unable to locate #{from}, please try again"
+			flash[:danger] = "Unable to locate #{@from}, please try again"
 			redirect_to root_path and return
 		end
 
