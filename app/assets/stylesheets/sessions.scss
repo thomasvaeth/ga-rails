@@ -1,3 +1,33 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin linear-gradient($top, $bottom) {
+  background: -webkit-gradient(linear, top left, bottom left, from($top), to($bottom));
+  background: -webkit-linear-gradient($top, $bottom);
+  background: linear-gradient($top, $bottom);
+}
+
+$first-gradient: #131F2C;
+$third-gradient: #2B688E;
+$pink: #E6178B;
+
+.section-7 {
+	@include linear-gradient($first-gradient, $third-gradient);
+
+	text-align: left;
+  color: #FFFFFF;
+
+  label {
+  	font-size: 18px;
+  }
+
+  p {
+  	text-align: center;
+    cursor: default;
+  }
+
+  .title {
+    color: $pink;
+    font-size: 108px;
+  }
+}

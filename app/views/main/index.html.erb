@@ -7,19 +7,19 @@
 	</div>
 	<div id="user">
 		<% if @current_user %>
-			<a href="/signout"><li data-menuanchor="about" class="btn btn-lg btn-default">Sign Out</li></a>
+			<a href="/signout"><li class="btn btn-lg btn-default">Sign Out</li></a>
 		<% else %>
-			<a href="/users/new"><li data-menuanchor="search" class="btn btn-lg btn-default">Sign Up</li></a>
-			<a href="/signin"><li data-menuanchor="data" class="btn btn-lg btn-default">Sign In</li></a>
+			<a href="/users/new"><li class="btn btn-lg btn-default">Sign Up</li></a>
+			<a href="/signin"><li class="btn btn-lg btn-default">Sign In</li></a>
 		<% end %>
 	</div>
 </div>
 
-<div id="fullpage">
+<div id="fullpage-one">
 	<div class="section section-1">
 		<p class="animated bounceInLeft"><span class="first">Fare</span>
 		<span class="second">Start</span></p>
-		<a href="#second" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
+		<a href="#search" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
 	</div>
 
 	<div class="section section-2">
@@ -42,18 +42,20 @@
 			</div>
 		</div>
 
-		<a href="#third" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
+		<a href="#data" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
 	</div>
 
 	<div class="section section-3">
 		<div id="tooltip-container"></div>
 		<div id="canvas-svg"></div>
+		<p>
+			Sort by:
+			<button id="countMap" class="btn btn-lg btn-default">Count</button>
+			<button id="uberMap" class="btn btn-lg btn-default">Uber</button>
+			<button id="lyftMap" class="btn btn-lg btn-default">Lyft</button>
+		</p>
 
-		<button id="countMap" class="btn btn-lg btn-default">Count</button>
-		<button id="uberMap" class="btn btn-lg btn-default">Uber</button>
-		<button id="lyftMap" class="btn btn-lg btn-default">Lyft</button>
-
-		<a href="#fourth" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
+		<a href="#about" class="bottom-a"><i class="fa fa-sort-desc fa-4x animated pulse infinite bottom-i"></i></a>
 	</div>
 
 	<div class="section section-4">
@@ -86,7 +88,7 @@
 	
 </div>
 
-
+<script type="text/javascript" src="/fullpage-home.js"></script>
 <script src="/mapscript.js"></script>
 
 <script>

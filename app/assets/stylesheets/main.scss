@@ -30,6 +30,14 @@ $pink: #E6178B;
   @include linear-gradient($fourth-gradient, $fifth-gradient);
 }
 
+.section-5 {
+  @include linear-gradient($first-gradient, $third-gradient);
+}
+
+.section-6 {
+  @include linear-gradient($third-gradient, $fifth-gradient);
+}
+
 html,
 body {
   font-family: 'Neou-Thin', sans-serif;
@@ -85,6 +93,7 @@ body {
 
 .section {
 	text-align: center;
+  color: #FFFFFF;
 
   p {
     cursor: default;
@@ -122,13 +131,11 @@ body {
 
   .description {
     font-size: 36px;
-    color: #FFFFFF;
   }
 }
 
 .section-1 {
   p {
-    color: #FFFFFF;
     font-size: 180px;
   }
 
@@ -144,9 +151,14 @@ body {
   }
 }
 
-.section-4 {
-  color: #FFFFFF;
+.section-3 {
+  p {
+    font-family: 'Neou-Bold', sans-serif;
+    font-size: 18px;
+  }
+}
 
+.section-4 {
   .last,
   .name {
     font-family: 'Neou-Bold', sans-serif;
