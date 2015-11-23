@@ -23,13 +23,13 @@
 		<div id="fromAddress">
 			FROM <span class="address"><%=@ride_data[2]["results"][0]["formatted_address"]%></span>
 			<% if @current_user %>
-	  		<button id="saveFrom">Save to address</button>
+	  		<button id="saveFrom" class="btn btn-default">Save from address</button>
 			<%end%>
 		</div>
 		<div id="toAddress">
 			TO <span class="address"><%=@ride_data[1]["results"][0]["formatted_address"]%></span>
 			<% if @current_user %>
-	  		<button id="saveTo">Save from address</button>
+	  		<button id="saveTo" class="btn btn-default">Save to address</button>
 			<%end%>
 		</div>
 
@@ -89,12 +89,12 @@
 			<ul>
 				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 					<div class="well uber">
-						<% if @ride_data[0][1] != nil %>
-							<li id="<%= @ride_data[0][1].display_name.tr(" ", "") %>"><%= @ride_data[0][1].estimate %></li>
-							<% if @ride_data[0][1].surge_multiplier != nil && @ride_data[0][1].surge_multiplier > 1 %>
+						<% if @ride_data[0][2] != nil %>
+							<li id="<%= @ride_data[0][1].display_name.tr(" ", "") %>"><%= @ride_data[0][2].estimate %></li>
+							<% if @ride_data[0][2].surge_multiplier != nil && @ride_data[0][2].surge_multiplier > 1 %>
 					    	SURGE 
 					    <%end%>
-							<li><%=@ride_data[0][1].display_name%></li>
+							<li><%=@ride_data[0][2].display_name%></li>
 						<% end %>
 					</div>
 				</div>

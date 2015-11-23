@@ -188,6 +188,11 @@ body {
     display: inline-block;
   }
 
+  .btn,
+  .form-control {
+    border-radius: 0;
+  }
+
   .well {
     font-size: 18px;
     border-radius: 0;

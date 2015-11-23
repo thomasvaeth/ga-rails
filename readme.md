@@ -26,4 +26,4 @@ Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mes
 ### Unsolved Problems
 
 
-## Upcoming Additions
+### Upcoming Additions
