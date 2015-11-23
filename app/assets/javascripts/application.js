@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 //= require 'd3.js'
 //= require 'fareStart.js'

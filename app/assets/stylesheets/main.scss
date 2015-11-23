@@ -30,6 +30,11 @@ $pink: #E6178B;
   @include linear-gradient($fourth-gradient, $fifth-gradient);
 }
 
+html,
+body {
+  font-family: 'Neou-Thin', sans-serif;
+}
+
 .btn-lg,
 .input-lg {
   font-family: 'Neou-Bold', sans-serif;
@@ -50,13 +55,14 @@ $pink: #E6178B;
   border: 1px solid #ECF0F1;
 }
 
-#menu {
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	padding: 0;
-	margin: 0;
-  z-index: 2;
+#navigation {
+  div {
+    position: fixed;
+    top: 10px;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+  }
 
   a,
   a:link,
@@ -66,6 +72,14 @@ $pink: #E6178B;
     display: inline-block;
     text-decoration: none;
     padding: 0 5px;
+  }
+
+  #menu {
+    left: 10px;
+  }
+
+  #user {
+    right: 10px;
   }
 }
 
@@ -102,13 +116,11 @@ $pink: #E6178B;
 	}
 
   .title {
-    font-family: 'Neou-Thin', sans-serif;
     color: $pink;
     font-size: 108px;
   }
 
   .description {
-    font-family: 'Neou-Thin', sans-serif;
     font-size: 36px;
     color: #FFFFFF;
   }
@@ -118,10 +130,6 @@ $pink: #E6178B;
   p {
     color: #FFFFFF;
     font-size: 180px;
-  }
-
-  .first {
-    font-family: 'Neou-Thin', sans-serif;
   }
 
   .second {

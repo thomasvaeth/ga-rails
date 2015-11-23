@@ -1,9 +1,19 @@
-<ul id="menu">
-	<a href="#home"><button data-menuanchor="home" class="btn btn-lg btn-default">Home</button></a>
-	<a href="#search"><button data-menuanchor="search" class="btn btn-lg btn-default">Search</button></a>
-	<a href="#data"><button data-menuanchor="data" class="btn btn-lg btn-default">Data</button></a>
-	<a href="#about"><button data-menuanchor="about" class="btn btn-lg btn-default">About</button></a>
-</ul>
+<div id="navigation">
+	<div id="menu">
+		<a href="#home"><li data-menuanchor="home" class="btn btn-lg btn-default">Home</li></a>
+		<a href="#search"><li data-menuanchor="search" class="btn btn-lg btn-default">Search</li></a>
+		<a href="#data"><li data-menuanchor="data" class="btn btn-lg btn-default">Data</li></a>
+		<a href="#about"><li data-menuanchor="about" class="btn btn-lg btn-default">About</li></a>
+	</div>
+	<div id="user">
+		<% if @current_user %>
+			<a href="/signout"><li data-menuanchor="about" class="btn btn-lg btn-default">Sign Out</li></a>
+		<% else %>
+			<a href="/users/new"><li data-menuanchor="search" class="btn btn-lg btn-default">Sign Up</li></a>
+			<a href="/signin"><li data-menuanchor="data" class="btn btn-lg btn-default">Sign In</li></a>
+		<% end %>
+	</div>
+</div>
 
 <div id="fullpage">
 	<div class="section section-1">
@@ -15,7 +25,7 @@
 	<div class="section section-2">
 		<p class="title">Search</p>
 		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-			<p class="description">Get fare quotes from Uber and Lyft, so you get the cheapest prices every time.</p>
+			<p class="description">Get fare quotes from Uber and Lyft, so you get the cheapest price every time.</p>
 		</div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
