@@ -60,6 +60,7 @@ body {
 }
 
 .form-control {
+  border-radius: 0;
   border: 1px solid #ECF0F1;
 }
 
@@ -156,8 +157,12 @@ body {
     font-family: 'Neou-Bold', sans-serif;
     font-size: 18px;
   }
-  #uberMap{
-    z-index: 99;
+
+  #countMap,
+  #uberMap,
+  #lyftMap {
+    background-color: #268A85;
+    color: white;
   }
 }
 

@@ -13,22 +13,19 @@
   <div class="section section-7">
     <%= render 'partials/flash' %>
     <p class="title">Sign Up</p>
-    <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-        <%= bootstrap_form_for :user do |user| %>
-          <%= user.text_field :firstname, :label => 'Name', :placeholder => 'First', class: "form-control input-lg" %>
-          <%= user.text_field :lastname, hide_label: true, :placeholder => 'Last', class: "form-control input-lg" %>
-          <%= user.text_field :email, :label => 'Email address', :placeholder => 'Email', class: "form-control input-lg" %>
-          <%= user.password_field :password, :label => 'Create a password', :placeholder => 'Password (8 character minimum)', class: "form-control input-lg" %>
-          <%= user.password_field :password_confirmation, :hide_label => true, :placeholder => 'Confirm Password', class: "form-control input-lg" %>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+      <%= bootstrap_form_for :user do |user| %>
+        <%= user.text_field :firstname, :label => 'Name', :placeholder => 'First', class: "form-control input" %>
+        <%= user.text_field :lastname, hide_label: true, :placeholder => 'Last', class: "form-control" %>
+        <%= user.text_field :email, :label => 'Email address', :placeholder => 'Email', class: "form-control" %>
+        <%= user.password_field :password, :label => 'Create a password', :placeholder => 'Password (8 character minimum)', class: "form-control" %>
+        <%= user.password_field :password_confirmation, :hide_label => true, :placeholder => 'Confirm Password', class: "form-control" %>
+        <%= user.text_field :ubercode, :label => 'Promo codes', :placeholder => 'Uber Code (Optional)', class: "form-control" %>
+        <%= user.text_field :lyftcode, hide_label: true, :placeholder => 'Lyft Code (Optional)', class: "form-control" %>
+
+        <%= user.submit 'Sign Up', class: "btn btn-lg btn-default" %>
+      <% end %>
     </div>
-        <div class=" form-group col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-          <%= user.text_field :ubercode, :placeholder => 'Uber Code', class: "form-control input-lg" %>
-          <%= user.text_field :lyftcode, :placeholder => 'Lyft Code', class: "form-control input-lg" %>
-       </div>
-          <%= user.submit 'Sign Up', class: "btn btn-lg btn-default" %>
-        <% end %>
-      </div>
   </div>
 </div>
 
