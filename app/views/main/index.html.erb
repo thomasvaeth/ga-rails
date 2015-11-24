@@ -13,11 +13,11 @@
 
 	<div class="section section-2">
 		<p class="title">Search</p>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+		<div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 			<p class="description">Get fare quotes from Uber and Lyft, so you get the cheapest price every time.</p>
 		</div>
 		<div class="row">
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+			<div class="col-xs-10 col-sm-6 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
 				<%= form_tag results_path :method => :get do %>
 					<%= text_field_tag :from, "", class: "form-control input-lg", placeholder: "Where are you getting picked up?" %><br>
 					<%= text_field_tag :to, "", class: "form-control input-lg", placeholder: "Where are you getting dropped off?" %><br>
@@ -54,7 +54,8 @@
 	</div>
 
 	<div class="section section-3">
-		<p>
+		<p id="title">There is a cool map here on the desktop version.</p>
+		<p class="map-sort">
 			Sort by:
 			<button id="countMap" class="btn btn-lg btn-default">Count</button>
 			<button id="uberMap" class="btn btn-lg btn-default">Uber</button>

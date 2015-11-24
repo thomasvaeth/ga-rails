@@ -92,6 +92,12 @@ body {
     left: 10px;
   }
 
+  .search,
+  .data,
+  .about {
+    display: none;
+  }
+
   #user {
     right: 10px;
   }
@@ -151,11 +157,21 @@ body {
     font-size: 18px;
   }
 
+  #title {
+    font-family: 'Neou-Bold', sans-serif;
+    font-size: 54px;
+  }
+
   #countMap,
   #uberMap,
   #lyftMap {
     background-color: $green;
     color: white;
+  }
+
+  .map-sort,
+  #canvas-svg {
+    display: none;
   }
 }
 
@@ -236,6 +252,14 @@ body {
 }
 
 @media (min-width: 768px) {
+  #navigation {
+    .search,
+    .data,
+    .about {
+      display: inline-block;
+    }
+  }
+
   .section {
     .bottom-a,
     .bottom-a:link,
@@ -251,6 +275,17 @@ body {
       position: absolute;
       bottom: 15px;
       z-index: 2;
+    }
+  }
+
+  .section-3 {
+    #title {
+      display: none;
+    }
+
+    .map-sort,
+    #canvas-svg {
+      display: initial;
     }
   }
 }
