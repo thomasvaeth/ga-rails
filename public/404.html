@@ -1,67 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Page not found | Fare Start</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    html,
+    body {
+      font-family: sans-serif;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    #fourzerofour {
+      background: -webkit-gradient(linear, top left, bottom left, from(#2B688E), to(#B8D2DD));
+      background: -webkit-linear-gradient(#2B688E, #B8D2DD);
+      background: linear-gradient(#2B688E, #B8D2DD);
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    p {
+      text-align: center;
+      margin: 0;
+    }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .error {
+      color: #E6178B;
+      font-size: 216px;
+      font-weight: 100;
+    }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .message {
+      color: #FFFFFF;
+      font-size: 90px;
+      font-weight: 100;
+    }
   </style>
 </head>
-
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <body>
+    <div id="fourzerofour">
+      <div class="section section-fourzerofour">
+        <p class="error">404</p>
+        <p class="message">This page does not exist.</p>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Full Page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // Full Page
+        $('#fourzerofour').fullpage({
+          // Navigation
+          menu: false,
+          lockAnchors: false,
+          anchors: ['error'],
+          navigation: false,
+          navigationPosition: 'right',
+          navigationTooltips: false,
+          showActiveTooltip: false,
+          slidesNavigation: false,
+          slidesNavPosition: 'bottom',
+
+          // Scrolling
+          css3: true,
+          scrollingSpeed: 700,
+          autoScrolling: true,
+          fitToSection: true,
+          fitToSectionDelay: 1000,
+          scrollBar: false,
+          easing: 'easeInOutCubic',
+          easingcss3: 'ease',
+          loopBottom: false,
+          loopTop: false,
+          loopHorizontal: true,
+          continuousVertical: false,
+          normalScrollElements: '#element1, .element2',
+          scrollOverflow: false,
+          touchSensitivity: 15,
+          normalScrollElementTouchThreshold: 5,
+
+          // Accessibility
+          keyboardScrolling: true,
+          animateAnchor: true,
+          recordHistory: true,
+
+          // Design
+          controlArrows: true,
+          verticalCentered: true,
+          resize : false,
+          sectionsColor : ['', '', ''],
+          paddingTop: '0',
+          paddingBottom: '0',
+          fixedElements: '#header, .footer',
+          responsiveWidth: 768,
+          responsiveHeight: 0,
+
+          // Custom Selectors
+          sectionSelector: '.section',
+          slideSelector: '.slide',
+
+          // Events
+          onLeave: function(index, nextIndex, direction){},
+          afterLoad: function(anchorLink, index){},
+          afterRender: function(){},
+          afterResize: function(){},
+          afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+          onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+        });
+      });
+    </script>
+  </body>
 </html>
