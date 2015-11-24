@@ -97,7 +97,18 @@
 	
 </div>
 
-<script type="text/javascript" src="/googlesearch.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var options = {
+  types: ['address']
+};
+
+var from = document.getElementById('from');
+autocomplete = new google.maps.places.Autocomplete(from, options);
+var to = document.getElementById('to')
+autocomplete2 = new google.maps.places.Autocomplete(to, options);
+});
+</script>
 <script type="text/javascript" src="/fullpage-home.js"></script>
 <script src="/mapscript.js"></script>
 <script src="index.js"></script>
