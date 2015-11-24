@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
   root 'main#index'
   get '/' => 'main#index'
+
   post '/results' => 'main#results'
+
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
+
   get '/users/newAddress' => 'users#newAddress'
   get '/users/deleteAddress' => 'users#deleteAddress'
+  
   get '/location' => 'main#location'
   post '/users/new' => 'users#create'
+
+  get '*unmatched_route', to: 'application#raise_not_found'
+
   resource :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
