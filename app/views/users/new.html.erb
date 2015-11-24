@@ -13,7 +13,7 @@
   <div class="section section-7">
     <%= render 'partials/flash' %>
     <p class="title">Sign Up</p>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+    <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
       <%= bootstrap_form_for :user do |user| %>
         <%= user.text_field :firstname, :label => 'Name', :placeholder => 'First', class: "form-control input" %>
         <%= user.text_field :lastname, hide_label: true, :placeholder => 'Last', class: "form-control" %>

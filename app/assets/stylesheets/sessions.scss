@@ -20,22 +20,40 @@ $pink: #E6178B;
   @include linear-gradient($third-gradient, $fifth-gradient);
 }
 
+.section {
+  .title {
+    color: $pink;
+    font-size: 54px;
+  }
+}
+
 .section-7,
 .section-8 {
 	text-align: left;
   color: #FFFFFF;
 
   label {
-  	font-size: 18px;
+  	display: none;
   }
 
   p {
   	text-align: center;
     cursor: default;
   }
+}
 
-  .title {
-    color: $pink;
-    font-size: 108px;
+@media (min-width: 768px) {
+  .section {
+    .title {
+      font-size: 108px;
+    }
+  }
+
+  .section-7,
+  .section-8 {
+    label {
+      display: inline-block;
+      font-size: 18px;
+    }
   }
 }

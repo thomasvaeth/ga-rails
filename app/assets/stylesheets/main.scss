@@ -127,17 +127,17 @@ body {
 
   .title {
     color: $pink;
-    font-size: 108px;
+    font-size: 72px;
   }
 
   .description {
-    font-size: 36px;
+    font-size: 18px;
   }
 }
 
 .section-1 {
   p {
-    font-size: 180px;
+    font-size: 99px;
   }
 
   .second {
@@ -153,8 +153,11 @@ body {
 
   #savedFrom,
   #savedTo {
-    margin-top: -10px;
-    margin-bottom: 10px;
+    display: none;
+  }
+
+  #sub {
+    margin-top: -50px;
   }
 }
 
@@ -194,7 +197,7 @@ body {
   }
 
   .name {
-    font-size: 27px;
+    font-size: 18px;
     padding-top: 5px;
   }
 
@@ -283,6 +286,29 @@ body {
       bottom: 15px;
       z-index: 2;
     }
+
+    .title {
+      font-size: 108px;
+    }
+
+    .description {
+      font-size: 36px;
+    }
+  }
+
+  .section-1 {
+    p {
+      font-size: 180px;
+    }
+  }
+
+  .section-2 {
+    #savedFrom,
+    #savedTo {
+      display: block;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
   }
 
   .section-3 {
@@ -293,6 +319,16 @@ body {
     .map-sort,
     #canvas-svg {
       display: block;
+    }
+  }
+
+  .section-4 {
+    .name {
+      font-size: 27px;
+    }
+
+    .line-break-xs {
+      display: none;
     }
   }
 }

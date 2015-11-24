@@ -11,10 +11,11 @@
     <% if @current_user.address.count == 0 %>
       <p class="empty">You don't have any saved addresses.</p>
     <% else %>
+      <p class="full">Saved address:</p>
       <div>
         <% @current_user.address.each do |address| %>
-          <div>
-            <span class="removeAddress glyphicon glyphicon-remove-circle"></span><span class="address"><%= address.address %></span>
+          <div class="div-address">
+            <span class="address"><%= address.address %></span> <span class="removeAddress"><i class="fa fa-trash fa-lg"></i></span>
           </div>
         <% end %>
       </div>
