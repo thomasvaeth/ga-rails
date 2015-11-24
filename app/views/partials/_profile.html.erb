@@ -1,0 +1,9 @@
+<div id="user">
+	<% if @current_user %>
+		<a href="/users"><li class="btn btn-lg btn-default">Profile</li></a>
+		<a href="/signout"><li data-menuanchor="about" class="btn btn-lg btn-default">Sign Out</li></a>
+	<% else %>
+		<a href="/users/new"><li data-menuanchor="search" class="btn btn-lg btn-default">Sign Up</li></a>
+		<a href="/signin"><li data-menuanchor="data" class="btn btn-lg btn-default">Sign In</li></a>
+	<% end %>
+</div>

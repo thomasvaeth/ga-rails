@@ -13,6 +13,7 @@ $third-gradient: #2B688E;
 $fourth-gradient: #6EA9C3;
 $fifth-gradient: #B8D2DD;
 $pink: #E6178B;
+$green: #268A85;
 
 .section-1 {
   @include linear-gradient($first-gradient, $second-gradient);
@@ -161,7 +162,7 @@ body {
   #countMap,
   #uberMap,
   #lyftMap {
-    background-color: #268A85;
+    background-color: $green;
     color: white;
   }
 }
@@ -216,7 +217,29 @@ body {
   }
 
   .lyft {
-    background-color: #268A85;
+    background-color: $green;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #surge {
+    padding: 0;
+    color: $pink;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    font-size: 18px;
+    font-family: 'Neou-Bold', sans-serif;
+    outline: 0;
+  }
+
+  #minus,
+  #plus {
+    background-color: $green;
+    color: #FFFFFF;
   }
 }
 

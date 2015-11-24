@@ -19,7 +19,7 @@ $(document).ready(function(){
 			lyftPrice_p = lyftPrice_p.join().replace(",","")
 			$("#Lyft").html(lyftPrice)
 			$("#LyftPlus").html(lyftPrice_p)
-		} else {}
+		}
 	});
 
 	$("#minus").click(function(){
@@ -40,8 +40,8 @@ $(document).ready(function(){
 			$("#Lyft").html(lyftPrice)
 			$("#LyftPlus").html(lyftPrice_p)
 
-		} else {}
-		
+		}
+
 	});
 //false = apple
 //true  = android
