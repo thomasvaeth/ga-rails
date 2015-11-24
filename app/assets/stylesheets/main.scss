@@ -46,6 +46,7 @@ $green: #268A85;
 html,
 body {
   font-family: 'Neou-Thin', sans-serif;
+  overflow: hidden;
 }
 
 .btn-lg,
@@ -285,7 +286,7 @@ body {
 
     .map-sort,
     #canvas-svg {
-      display: initial;
+      display: block;
     }
   }
 }

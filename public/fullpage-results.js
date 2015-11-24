@@ -42,8 +42,8 @@ $(document).ready(function() {
 	  sectionsColor : ['', '', ''],
 	  paddingTop: '0',
 	  paddingBottom: '0',
-	  fixedElements: '#header, .footer',
-	  responsiveWidth: 768,
+	  fixedElements: '',
+	  responsiveWidth: 0,
 	  responsiveHeight: 0,
 
 	  // Custom Selectors

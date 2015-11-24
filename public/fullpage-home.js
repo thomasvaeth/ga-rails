@@ -4,7 +4,7 @@ $(document).ready(function() {
 	  // Navigation
 	  menu: false,
 	  lockAnchors: false,
-	  anchors: ['home', 'search', 'data', 'about'],
+	  anchors: ['', 'search', 'data', 'about'],
 	  navigation: false,
 	  navigationPosition: 'right',
 	  navigationTooltips: false,
@@ -42,8 +42,8 @@ $(document).ready(function() {
 	  sectionsColor : ['', '', ''],
 	  paddingTop: '0',
 	  paddingBottom: '0',
-	  fixedElements: '#header, .footer',
-	  responsiveWidth: 768,
+	  fixedElements: '',
+	  responsiveWidth: 0,
 	  responsiveHeight: 0,
 
 	  // Custom Selectors
