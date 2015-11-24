@@ -211,6 +211,10 @@ body {
 }
 
 .section-5 {
+  .row:first-child {
+    margin-top: 20px;
+  }
+
   .form-control:first-child {
     display: inline-block;
   }
@@ -220,8 +224,17 @@ body {
     border-radius: 0;
   }
 
+  .prime-time,
+  .well,
+  .promo {
+    font-size: 12px;
+  }
+
+  .address {
+    font-size: 8px;
+  }
+
   .well {
-    font-size: 18px;
     border-radius: 0;
     border: none;
   }
@@ -258,6 +271,18 @@ body {
   #plus {
     background-color: $green;
     color: #FFFFFF;
+  }
+
+  .map-holder {
+    display: none;
+  }
+}
+
+@media (min-width: 736px) {
+  .section-4 {
+    .line-break-xs {
+      display: none;
+    }
   }
 }
 
@@ -309,6 +334,10 @@ body {
       margin-top: -10px;
       margin-bottom: 10px;
     }
+
+    #sub {
+      margin-top: 0;
+    }
   }
 
   .section-3 {
@@ -326,9 +355,25 @@ body {
     .name {
       font-size: 27px;
     }
+  }
 
-    .line-break-xs {
-      display: none;
+  .section-5 {
+    .row:first-child {
+      margin-top: 0;
+    }
+
+    .map-holder {
+      display: block;
+    }
+
+    .address {
+      font-size: 14px;
+    }
+
+    .well,
+    .prime-time,
+    .promo {
+      font-size: 18px;
     }
   }
 }

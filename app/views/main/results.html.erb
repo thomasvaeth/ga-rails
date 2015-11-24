@@ -9,20 +9,24 @@
 		<%= render "partials/flash" %>
 		<p class="title">Quotes</p>
 		<div id="fromAddress">
-			FROM <span class="address"><%=@ride_data[2]["results"][0]["formatted_address"]%></span>
 			<% if @current_user %>
-	  		<button id="saveFrom" class="btn btn-default">Save from address</button>
-			<%end%>
+	  		<button id="saveFrom" class="btn btn-default">Save</button>
+	  	<% else %>
+	  		From:
+			<% end %>
+			<span class="address"><%=@ride_data[2]["results"][0]["formatted_address"]%></span>
 		</div>
 		<div id="toAddress">
-			TO <span class="address"><%=@ride_data[1]["results"][0]["formatted_address"]%></span>
 			<% if @current_user %>
-	  		<button id="saveTo" class="btn btn-default">Save to address</button>
+	  		<button id="saveTo" class="btn btn-default">Save</button>
+	  	<% else %>
+	  		To:
 			<%end%>
+			<span class="address"><%=@ride_data[1]["results"][0]["formatted_address"]%></span>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
 				<div class="row">
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 						<div class="well uber">
@@ -78,7 +82,7 @@
 						</div>
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-						<p>Is it Prime Time?</p>
+						<p class="prime-time">Is it Prime Time?</p>
 						<button id="minus" class="btn btn-default">-</button>
 						<input id="surge" class="input-lg" type="number" min="1" max="20" step=".25" value="1"></input>
 						<button id="plus"class="btn btn-default">+</button>
@@ -86,15 +90,15 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-						<p>Uber Promo Code: <%= @codes["ubercode"] %></p>
+						<p class="promo">Uber Promo Code: <%= @codes["ubercode"] %></p>
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-						<p>Lyft Promo Code: <%= @codes["lyftcode"] %></p>
+						<p class="promo">Lyft Promo Code: <%= @codes["lyftcode"] %></p>
 					</div>
 				</div>
 
 			</div>
-			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 map-holder">
 				<div id="map"></div>
 			</div>
 		</div>
