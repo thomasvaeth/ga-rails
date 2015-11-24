@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	// Full Page
-	$('#fullpage-one').fullpage({
+	$('#fullpage-five').fullpage({
 	  // Navigation
 	  menu: false,
 	  lockAnchors: false,
-	  anchors: ['home', 'search', 'data', 'about'],
+	  anchors: ['profile'],
 	  navigation: false,
 	  navigationPosition: 'right',
 	  navigationTooltips: false,

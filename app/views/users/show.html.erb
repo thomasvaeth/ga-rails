@@ -1,24 +1,25 @@
-<h1>Profile Page</h1>
-<div>
-<%= form_for :user do |user| %>
-  <div>
-  <%= user.label :firstname %>
-  <%= user.text_field :firstname, :value => @current_user['firstname'] %>
+<div id="navigation">
+  <%= render 'partials/nav' %>
+  <div id="user">
+    <a href="/signout"><li class="btn btn-lg btn-default">Sign Out</li></a>
   </div>
-  <div>
-  <%= user.label :lastname %>
-  <%= user.text_field :lastname, :value => @current_user['lastname'] %>
+</div>
+
+<div id="fullpage-five">
+  <div class="section section-9">
+    <p class="title">Hello <%= @current_user["firstname"] %>.</p>
+    <% if @current_user.address.count == 0 %>
+      <p class="empty">You don't have any saved addresses.</p>
+    <% else %>
+      <div>
+        <% @current_user.address.each do |address| %>
+          <div>
+            <span class="removeAddress glyphicon glyphicon-remove-circle"></span><span class="address"><%= address.address %></span>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <div>
-  <%= user.label :email %>
-  <%= user.text_field :email, :value => @current_user['email'] %>
-  </div>
-<% end %>
 </div>
-<div>
-<% @current_user.address.each do |address| %>
-<div>
-<span class="removeAddress glyphicon glyphicon-remove-circle"></span><span class="address"><%= address.address %></span>
-</div>
-<% end %>
-</div>
+
+<script type="text/javascript" src="/fullpage-profile.js"></script>

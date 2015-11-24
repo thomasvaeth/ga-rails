@@ -39,6 +39,10 @@ $green: #268A85;
   @include linear-gradient($third-gradient, $fifth-gradient);
 }
 
+.section-7 {
+  @include linear-gradient($third-gradient, $fifth-gradient);
+}
+
 html,
 body {
   font-family: 'Neou-Thin', sans-serif;
@@ -94,7 +98,7 @@ body {
 }
 
 .section {
-	text-align: center;
+  text-align: center;
   color: #FFFFFF;
 
   p {
@@ -110,21 +114,9 @@ body {
     color: #FFFFFF;
   }
 
-	.bottom-a,
-	.bottom-a:link,
-	.bottom-a:hover,
-	.bottom-a:active,
-	.bottom-a:visited {
-		display: block;
-		margin-right: 35px;
-		z-index: 2;
-	}
-
-	.bottom-i {
-		position: absolute;
-		bottom: 15px;
-		z-index: 2;
-	}
+  .bottom-a {
+    display: none;
+  }
 
   .title {
     color: $pink;
@@ -243,206 +235,22 @@ body {
   }
 }
 
-/* Stylesheet for data state map */
-.categories {
-  fill: none;
-  stroke: #fff;
-  stroke-linejoin: round;
-}
+@media (min-width: 768px) {
+  .section {
+    .bottom-a,
+    .bottom-a:link,
+    .bottom-a:hover,
+    .bottom-a:active,
+    .bottom-a:visited {
+      display: block;
+      margin-right: 35px;
+      z-index: 2;
+    }
 
-.categories-choropleth {
-  fill: #ccc;
-}
-
-#tooltip-container {
-  position: absolute;
-  background-color: #fff;
-  color: #000;
-  padding: 10px;
-  border: 1px solid;
-  display: none;
-}
-
-#canvas svg {
-  border: 0px;
-}
-
-.tooltip_key {
-  font-weight: bold;
-}
-
-.tooltip_value {
-  margin-left: 20px;
-  float: right;
-}
-
-.x-axis {
-  fill: #000;
-}
-
-.chart {
-  background: #fff;
-  margin: 5px;
-}
- 
-.chart .category-bar {
-  stroke: white;
-  fill: steelblue;
-}
- 
-.chart .score {
-  fill: white;
-}
- 
-.chart text.name {
-  fill: #000;
-}
- 
-.chart line {
-  stroke: #c1c1c1;
-}
- 
-.chart .rule {
-  fill: #000;
-}
-
-.main-category-text {
-  fill: #FF4A4A;
-}
-
-.main-category-bar {
-  stroke: #FF4A4A;
-  stroke-width: 2px;
-}
-
-/*!
-Animate.css - http://daneden.me/animate
-Version - 3.4.0
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-Copyright (c) 2015 Daniel Eden
-*/
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
-@-webkit-keyframes pulse {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    .bottom-i {
+      position: absolute;
+      bottom: 15px;
+      z-index: 2;
+    }
   }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-@keyframes pulse {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.pulse {
-  -webkit-animation-name: pulse;
-  animation-name: pulse;
-}
-
-@-webkit-keyframes bounceInLeft {
-  from, 60%, 75%, 90%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-3000px, 0, 0);
-    transform: translate3d(-3000px, 0, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(25px, 0, 0);
-    transform: translate3d(25px, 0, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(5px, 0, 0);
-    transform: translate3d(5px, 0, 0);
-  }
-
-  to {
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes bounceInLeft {
-  from, 60%, 75%, 90%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-3000px, 0, 0);
-    transform: translate3d(-3000px, 0, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(25px, 0, 0);
-    transform: translate3d(25px, 0, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(5px, 0, 0);
-    transform: translate3d(5px, 0, 0);
-  }
-
-  to {
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-.bounceInLeft {
-  -webkit-animation-name: bounceInLeft;
-  animation-name: bounceInLeft;
 }
