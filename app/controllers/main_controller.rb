@@ -115,15 +115,15 @@ class MainController < ApplicationController
 	end
 
 	def get_code
-		@@count += 1
 		@codes = User.select("id,ubercode,lyftcode").order("id ASC")
+		@@count = (rand(@codes.length))
 		@index = @codes
-		@codes = @codes[(@@count % @codes.length)]
-		while(@codes["ubercode"].empty? || @codes["lyftcode"].empty?)
-			@@count += 1
-			@codes = @index[((@@count) % @index.length)]
-		end
-		@codes
+		@codes = @codes[@@count % @index.length]
+	 	while(@codes["ubercode"].empty? || @codes["lyftcode"].empty?)
+ 		@@count += rand(@index.length)
+ 		@codes = @index[((@@count) % @index.length)]
+ 		end
+ 		@codes
 	end
 
 	class Lyft 
