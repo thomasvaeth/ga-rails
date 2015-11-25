@@ -33,7 +33,7 @@
 							<% if @ride_data[0][0] != nil %>
 								<li id="<%= @ride_data[0][0].display_name.tr(" ", "") %>"><%= @ride_data[0][0].estimate %></li>
 								<% if @ride_data[0][0].surge_multiplier != nil && @ride_data[0][0].surge_multiplier > 1 %>
-						    	SURGE 
+						    	<%= @ride_data[0][0].surge_multiplier %>x Surge 
 						    <%end%>
 								<li>UberX</li>
 							<% end %>				
@@ -54,7 +54,7 @@
 							<% if @ride_data[0][1] != nil %>
 								<li id="<%= @ride_data[0][1].display_name.tr(" ", "") %>"><%= @ride_data[0][1].estimate %></li>
 								<% if @ride_data[0][1].surge_multiplier != nil && @ride_data[0][1].surge_multiplier > 1 %>
-						    	SURGE 
+						    	<%= @ride_data[0][0].surge_multiplier %>x Surge 
 						    <%end%>
 								<li>Uber Black</li>
 							<% end %>
@@ -75,7 +75,7 @@
 							<% if @ride_data[0][2] != nil %>
 								<li id="<%= @ride_data[0][1].display_name.tr(" ", "") %>"><%= @ride_data[0][2].estimate %></li>
 								<% if @ride_data[0][2].surge_multiplier != nil && @ride_data[0][2].surge_multiplier > 1 %>
-						    	SURGE 
+						    	<%= @ride_data[0][0].surge_multiplier %>x Surge  
 						    <%end%>
 								<li>Uber SUV</li>
 							<% end %>

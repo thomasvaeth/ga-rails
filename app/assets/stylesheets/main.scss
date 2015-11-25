@@ -281,6 +281,7 @@ body {
   #clickable1,
   #clickable2 {
     color: #FFFFFF;
+    display: inline-block;
   }
 
   #clickable1 {
@@ -408,6 +409,11 @@ body {
 
     .well {
       padding: 19px;
+    }
+
+    #clickable1,
+    #clickable2 {
+      display: none;
     }
   }
 }
