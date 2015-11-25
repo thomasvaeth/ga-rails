@@ -29,7 +29,7 @@ $pink: #E6178B;
 
   .title {
     color: $pink;
-    font-size: 108px;
+    font-size: 63px;
   }
 
   .empty {
@@ -45,6 +45,18 @@ $pink: #E6178B;
   }
 
   .address {
-    font-size: 18px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-9 {
+    .title {
+      font-size: 108px;
+    }
+
+    .address {
+      font-size: 18px;
+    }
   }
 }

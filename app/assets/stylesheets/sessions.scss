@@ -25,6 +25,10 @@ $pink: #E6178B;
     color: $pink;
     font-size: 54px;
   }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
 }
 
 .section-7,
@@ -46,6 +50,10 @@ $pink: #E6178B;
   .section {
     .title {
       font-size: 108px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
     }
   }
 
