@@ -277,6 +277,19 @@ body {
   .map-holder {
     display: none;
   }
+
+  #clickable1,
+  #clickable2 {
+    color: #FFFFFF;
+  }
+
+  #clickable1 {
+    background-color: #000000;
+  }
+
+  #clickable2 {
+    background-color: $pink;
+  }
 }
 
 @media (min-width: 667px) {

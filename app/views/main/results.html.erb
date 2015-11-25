@@ -91,9 +91,11 @@
 				<div class="row">
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 						<p class="promo">Uber Promo Code: <%= @codes["ubercode"] %></p>
+						<button id="clickable1" class="btn btn-default android apple" hidden><a href="<%=@uberString%>">Request UBER</a></button>
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 						<p class="promo">Lyft Promo Code: <%= @codes["lyftcode"] %></p>
+						<button id="clickable2" class="btn btn-default android apple" hidden><a href="lyft://app">Request LYFT</a></button>
 					</div>
 				</div>
 
@@ -102,16 +104,6 @@
 				<div id="map"></div>
 			</div>
 		</div>
-
-		<button id="clickable1" class="android apple" hidden><a href="<%=@uberString%>">UBER</a></button>
-		<button class="android" hidden><a href="https://play.google.com/store/apps/details?id=com.ubercab&hl=en">UBER ANDROID
-		</a></button>
-		<button class="apple" hidden><a  href="https://itunes.apple.com/us/app/uber/id368677368">UBER APPLE</a></button>
-		<button id="clickable2" class="android apple" hidden><a href="lyft://app">LYFT</a></button>
-		<button class="android" hidden><a href="https://play.google.com/store/apps/details?id=me.lyft.android&hl=en">LYFT ANDROID
-		</a></button>
-		<button class="apple" hidden><a  href="https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082?mt=8">LYFT APPLE
-		</a></button>
 
 </div>
 <script type="text/javascript" src="/fullpage-results.js"></script>
