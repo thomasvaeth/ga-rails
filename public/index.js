@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	renderMap('byCount');
-	
 	$("#uberMap").click(function() {
 		renderMap('byUber');
 	});
