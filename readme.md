@@ -1,6 +1,6 @@
 # Fare Start
 ### About
-Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mestas](https://github.com/andrew-mestas), and [Thomas Vaeth](https://github.com/thomasvaeth). The idea came after we saw how Lyft calculates the price for their rides for Seattle (cost = 1.35*mil + 0.24*min + 3.30).
+Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mestas](https://github.com/andrew-mestas), and [Thomas Vaeth](https://github.com/thomasvaeth). Fare Start is used to compare Uber and Lyft prices to get a user the cheapest price from where they are to where they are going. The idea came after we saw how Lyft calculates the price for their rides for Seattle (cost = 1.35*mil + 0.24*min + 3.30).
 
 ### Technologies Used
 * Ruby on Rails
@@ -27,6 +27,7 @@ Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mes
 * Thomas surveyed 50 people to see if the idea was worth pursuing and found that 76% of people would choose a car service by price rather than by brand (focusing on UberX vs Lyft).
   - Thomas's personal experience has been roughly the same for both services. His ride history showed 95% of his previous Uber drivers and 100% of Lyft drivers were male. It also showed the cars were all similar in class with Toyota Prius being the most common for both.
 * We wanted to have an incentive for users to signup besides being able to save searched addresses since they can search without having to signup. We added input fields for the user to put in their Uber and Lyft promo codes for new user signup. The results page will randomly display one user's codes that a visitor will be able to use in the Uber or Lyft app.
+* We needed to implement deep linking, so a user could open Uber or Lyft directly from our application with the addresses already entered in for them. All the user would need to do is confirm the request.
 
 
 ### Unsolved Problems
