@@ -28,5 +28,14 @@
     <!-- Full Page -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="/googlesearch.js"></script>
+    <script>
+$(document).ready(function(){
+var lockFunction =  window.screen.orientation.lock;
+if (lockFunction.call(window.screen.orientation, 'portrait')) {
+    } else {
+        alert("For best experience please view in portrait mode. -the ga-rails team :)")
+    }
+});
+</script>
   </body>
 </html>
