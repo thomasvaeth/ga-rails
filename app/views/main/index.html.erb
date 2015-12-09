@@ -13,16 +13,16 @@
 
 	<div class="section section-2">
 		<p class="title">Search</p>
-		<div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+		<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">
 			<p class="description">Get fare quotes from Uber and Lyft, so you get the cheapest price every time.</p>
 		</div>
 		<div class="row">
-			<div class="col-xs-10 col-sm-6 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+			<div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3">
 				<%= form_tag results_path :method => :get do %>
 					<%= text_field_tag :from, "", class: "form-control input-lg", placeholder: "Where are you getting picked up?" %><br>
 					<% if @current_user %>
 						<% if @addresses %>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+							<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 								<select id="savedFrom" class="form-control">
 									<option value="">Or Use a Saved Addresses Here</option>
 									<% @addresses.each do |address| %>
@@ -36,7 +36,7 @@
 					<%= text_field_tag :to, "", class: "form-control input-lg", placeholder: "Where are you getting dropped off?" %><br>
 					<% if @current_user %>
 						<% if @addresses %>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+							<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 								<select id="savedTo" class="form-control">
 									<option value="">Here Too</option>
 									<% @addresses.each do |address| %>
@@ -76,23 +76,23 @@
 
 	<div class="section section-4">
 		<p class="title">About</p>
-		<div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+		<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">
 			<p class="description">Fare <span class="last">Start</span> is a full stack web application built using Ruby on Rails for General Assembly Seattle.</p>
 		</div>
 		<div class="row">
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<div class="col-xs-4">
 				<%= image_tag("todd.jpg", class: "img-rounded img-responsive center-block") %>
 				<div class="caption">
 					<p class="name">Todd <br class="line-break-xs">Best</p>
 					<a href="https://www.linkedin.com/in/toddbest2004" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a><a href="https://github.com/toddbest2004" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a>
 				</div>
 			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<div class="col-xs-4">
 				<%= image_tag("andrew.jpg", class: "img-rounded img-responsive center-block") %>
 				<p class="name">Andrew Mestas</p>
 				<a href="https://www.linkedin.com/in/andrewmestas" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a><a href="https://github.com/andrew-mestas" target="_blank"><i class="fa fa-github-alt fa-2x"></i></a>
 			</div>
-			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<div class="col-xs-4">
 				<%= image_tag("thomas.jpg", class: "img-rounded img-responsive center-block") %>
 				<div class="caption">
 					<p class="name">Thomas Vaeth</p>

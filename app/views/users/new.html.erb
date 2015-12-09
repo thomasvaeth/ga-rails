@@ -13,13 +13,13 @@
   <div class="section section-7">
     <%= render 'partials/flash' %>
     <p class="title">Sign Up</p>
-    <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4 col-xs-offset-1 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+    <div class="col-xs-10 col-sm-4 col-xs-offset-1 col-sm-offset-4">
       <%= bootstrap_form_for :user do |user| %>
         <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-6">
             <%= user.text_field :firstname, :label => 'First Name', :placeholder => 'First', class: "form-control input" %>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-6">
           <%= user.text_field :lastname, :label => 'Last Name', :placeholder => 'Last', class: "form-control" %>
           </div>
         </div>
@@ -27,10 +27,10 @@
         <%= user.password_field :password, :label => 'Create a password', :placeholder => 'Password (8 character minimum)', class: "form-control" %>
         <%= user.password_field :password_confirmation, :hide_label => true, :placeholder => 'Confirm Password', class: "form-control" %>
         <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-6">
             <%= user.text_field :ubercode, :label => 'Uber Promo', :placeholder => 'Code (Optional)', class: "form-control" %>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-6">
             <%= user.text_field :lyftcode, :label => 'Lyft Promo', :placeholder => 'Code (Optional)', class: "form-control" %>
           </div>
         </div>
