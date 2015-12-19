@@ -1,4 +1,4 @@
-# Fare Start
+# [Fare Start](https://farestart.herokuapp.com/)
 ### About
 Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mestas](https://github.com/andrew-mestas), and [Thomas Vaeth](https://github.com/thomasvaeth). Fare Start is used to compare Uber and Lyft prices to get a user the cheapest price from where they are to where they are going. The idea came after we saw how Lyft calculates the price for their rides for Seattle (cost = 1.35*mil + 0.24*min + 3.30).
 
@@ -37,3 +37,11 @@ Fare Start is built by [Todd Best](https://github.com/toddbest2004), [Andrew Mes
 * Different alerts
 * More accurate pricing for Lyft when there is a public Lyft API
 * Add wait time feature when there is a public Lyft API (Uber API already has wait time)
+
+### Screenshots
+Landing View
+![Landing](https://github.com/thomasvaeth/ga-rails/blob/master/screenshots/screenshot-1.png "Desktop screenshot")
+Quote View
+![Quote](https://github.com/thomasvaeth/ga-rails/blob/master/screenshots/screenshot-2.png "Desktop screenshot")
+About View
+![About](https://github.com/thomasvaeth/ga-rails/blob/master/screenshots/screenshot-3.png "Desktop screenshot")
